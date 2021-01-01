@@ -1,0 +1,1178 @@
+<!DOCTYPE html>
+<html lang="vi" class="static dir-ltr codecamp" dir="ltr">
+
+<head>
+ <meta charset="utf-8" />
+ <meta name="description"
+  content="Học lập trình trở nên đơn giản và thú vị hơn bao giờ hết. Bạn sẽ trở thành một lập trình viên tài năng thông qua quá trình học tập và luyện tập mỗi ngày." />
+ <meta name="author" content="CodeLearn" />
+ <link rel="shortcut icon" href="content/codelearn-icon.png" />
+ <link rel="apple-touch-icon" href="content/codelearn-icon.png" />
+ <link rel="canonical" href="/home" />
+ <link rel="alternate" hreflang="vi" href="https://codelearn.io/home" />
+ <link rel="alternate" hreflang="en-US" href="https://codelearn.io/home" />
+ <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,user-scalable=0" />
+ <title>Lập trình mỗi ngày để trở thành lập trình viên ưu tú</title>
+
+ <meta property="og:title" content="Lập trình mỗi ngày để trở thành lập trình viên ưu tú" />
+ <meta property="og:type" content="website" />
+ <meta property="og:url" content="https://codelearn.io/home" />
+ <meta property="og:description"
+  content="Học lập trình trở nên đơn giản và thú vị hơn bao giờ hết. Bạn sẽ trở thành một lập trình viên tài năng thông qua quá trình học tập và luyện tập mỗi ngày." />
+ <meta property="og:image" content="content/codelearn-share.jpg" />
+ <meta property="fb:app_id" content="648326032295473" />
+
+
+ <meta name="twitter:card" content="summary">
+ <meta name="twitter:url" content="https://codelearn.io/home">
+ <meta name="twitter:title" content="Lập trình mỗi ngày để trở thành lập trình viên ưu tú">
+ <meta name="twitter:description"
+  content="Học lập trình trở nên đơn giản và thú vị hơn bao giờ hết. Bạn sẽ trở thành một lập trình viên tài năng thông qua quá trình học tập và luyện tập mỗi ngày.">
+ <meta name="twitter:image" content="content/codelearn-share.jpg" />
+ <meta name="twitter:site" content="@Codelearn.io">
+ <meta name="twitter:creator" content="@Codelearn.io">
+
+ <meta name="google-signin-client_id"
+  content="16523143533-ovv9lj8c7i8sv36sv3lguom0msmdk8ah.apps.googleusercontent.com" />
+
+ <script async src="https://www.googletagmanager.com/gtag/js?id=UA-141685371-1"></script>
+ <script>
+  var isGetNotification = true;
+  var isNotCountComment = false;
+
+  var s3Storage = '';
+  var resourcePath = '/Themes/TheCodeCampPro/Resources';
+  var strAuthen = 'dangvanquy200498@gmail.com';
+  var faceId = '648326032295473';
+  var isLoadedFacebook = 'False';
+  if (strAuthen == '') {
+   var googleId = '16523143533-ovv9lj8c7i8sv36sv3lguom0msmdk8ah.apps.googleusercontent.com';
+  }
+
+  if (strAuthen == '') {
+   var LOGIN_VALIDATOR, SIGNUP_VALIDATOR;
+   function openModal(tab) {
+
+    $('#loginModal a[data-target="#' + tab + '"]').tab('show');
+    switch (tab) {
+     case 'login':
+      $(".btn--facebook").attr('title', 'Đăng nhập bằng Facebook');
+      $(".btn--google").attr('title', 'Đăng nhập bằng Google');
+      $("#loginModal .header-card").text('Đăng nhập tài khoản của bạn');
+      SIGNUP_VALIDATOR && SIGNUP_VALIDATOR.resetForm();
+      break;
+     case 'signup':
+      $(".btn--facebook").attr('title', 'Tiếp tục với Facebook');
+      $(".btn--google").attr('title', 'Tiếp tục với Google');
+      $("#loginModal .header-card").text('Đăng ký tài khoản mới');
+      LOGIN_VALIDATOR && LOGIN_VALIDATOR.resetForm();
+      break;
+    }
+   }
+  }
+
+  if ('https://codelearn.io' == location.origin.toLocaleLowerCase()) {
+   window.dataLayer = window.dataLayer || [];
+   function gtag() { dataLayer.push(arguments); }
+
+   gtag('js', new Date());
+   gtag('config', 'UA-141685371-1');
+   gtag('config', 'USER_MANAGEMENT');
+   gtag('set', { 'user_id': 'dangvanquy200498@gmail.com' });
+
+   // Measure Google Ads conversions
+   gtag('event', 'conversion', {
+    'send_to': 'USER_MANAGEMENT/dangvanquy200498@gmail.com',
+   });
+
+   window['GoogleAnalyticsObject'] = 'ga';
+   window['ga'] = window['ga'] || function () {
+    (window['ga'].q = window['ga'].q || []).push(arguments)
+   };
+   ga('set', 'userId', 'dangvanquy200498@gmail.com');
+  }
+
+  window.fbAsyncInit = function () {
+   FB.init({
+    appId: faceId,
+    xfbml: true,
+    version: 'v7.0'
+   });
+   FB.AppEvents.logPageView();
+   isLoadedFacebook = true;
+  };
+
+  (function (d, s, id) {
+   var js, fjs = d.getElementsByTagName(s)[0];
+   if (d.getElementById(id)) { return; }
+   js = d.createElement(s); js.id = id;
+   js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+   fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+
+ </script>
+
+ <script>
+  !function (f, b, e, v, n, t, s) {
+   if (f.fbq) return; n = f.fbq = function () {
+    n.callMethod ?
+     n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+   };
+   if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+   n.queue = []; t = b.createElement(e); t.async = !0;
+   t.src = v; s = b.getElementsByTagName(e)[0];
+   s.parentNode.insertBefore(t, s)
+  }(window, document, 'script',
+   'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '700313553710795');
+  fbq('track', 'PageView');
+ </script>
+
+ <link href="style.css" rel="stylesheet" type="text/css" />
+ <link href="skin.css" rel="stylesheet" type="text/css" />
+ <link href="bootstrap.css" rel="stylesheet" type="text/css" />
+ <link href="font.css" rel="stylesheet" type="text/css" />
+ <link href="home.css" rel="stylesheet" type="text/css" />
+ <link href="bootstrap-tour.css" rel="stylesheet" type="text/css" />
+ <link href="common.css" rel="stylesheet" type="text/css" />
+ <link href="site.css" rel="stylesheet" type="text/css" />
+ <link href="login-modal.css" rel="stylesheet" type="text/css" />
+ 
+ <script src="defer_plus.js" type="text/javascript"></script>
+ <script src="jquery.js" type="text/javascript"></script>
+ <script src="bootstrap.min.js" type="text/javascript"></script>
+ <script src="jquery.ui.min.js" type="text/javascript"></script>
+ <script src="jquery.validation.js" type="text/javascript"></script>
+ <script src="jquery.validation.1.16.0.js" type="text/javascript"></script>
+ <link href="https://use.fontawesome.com/releases/v5.0.1/css/all.css" rel="stylesheet">
+ <script src="https://www.google.com/recaptcha/api.js?render=6LcMTLMUAAAAAFLLyTIvjCj7k0bAG8ZqjnaTTrQE"
+  type="text/javascript"></script>
+ <script src="login-form.js" type="text/javascript"></script>
+ <script src="common.js" type="text/javascript"></script>
+
+ 
+ 
+</head>
+
+<body class="hold-transition site-body skin-sku-light layout-top-nav home ">
+ <script>
+  //<![CDATA[
+  var LANG_CURRENT = "vn";
+  const CurrentUserId = 5838384;
+  const NOTTIFY_USER_ACCESSKEY = 'nottifyAccessKey';
+  const IS_ADMIN = false;
+
+  PKLService.init({ strVersion: '798184607', strLangCode: 'vn', IsHasLogin: true, url: location.origin });
+        //]]>
+ </script>
+ <div id="layout-navigation" class="group ">
+  <div class="zone zone-navigation">
+   <article class="widget-navigation widget-menu-widget widget">
+    <header class="navbar site-header">
+
+     <div class="wrap-site-logo">
+      <a title="CodeLearn" href="/dashboard">
+       <img alt="CodeLearn nền tảng dạy lập trình trực tuyến" class="site-logo"
+        src="codelearn-logo.png">
+       <img alt="CodeLearn lập trình mỗi ngày" class="site-logo-mobile"
+        src="codelearn-mobile-logo.png">
+      </a>
+     </div>
+     <div class="wrap-right-header">
+      <input type="checkbox" id="mobile-menu-cb" name="mobile-menu-cb" />
+      <label class="hamburger-button" for="mobile-menu-cb">
+       <span class="hamburger-icon"></span>
+      </label>
+      <label class="hamburger-menu-mask" for="mobile-menu-cb"></label>
+      <nav class="site-menu">
+       <ul class="menu menu-main-menu">
+        <li><a href="/learning">Học tập</a>
+        </li>
+        <li><a href="/training">Luyện tập</a>
+        </li>
+        <li><a href="/fights">Thi đấu</a>
+        </li>
+        <li><a href="/challenge">Thử thách</a>
+        </li>
+        <li><a href="/evaluating">Đánh giá</a>
+        </li>
+        <li><a href="/discussion">Thảo luận</a>
+        </li>
+        <li><a href="/leaderboard">Xếp hạng</a>
+        </li>
+        <li><a href="/game">Trò chơi</a>
+        </li>
+        <li><a href="/chat">Chia sẻ</a>
+        </li>
+       </ul>
+       <div class="dropdown dropdown-language">
+        <a href="#" class="dropdown-toggle btn-dark btn--language " data-toggle="dropdown" role="button"
+         aria-haspopup="true" aria-expanded="false" title="Tiếng Việt">
+         <img alt="Tiếng Việt" class="button-language btn-img flag" src="vn.png" />
+        </a>
+        <ul class="dropdown-menu">
+         <li>
+          <span class="change-lang" data-link="/language/setLanguageLocal?name=en&redirectUrl=">
+           <img alt="en" class="icon-language" src="en.png">
+           English
+          </span>
+         </li>
+         <li>
+          <span class="change-lang" data-link="/language/setLanguageLocal?name=vn&redirectUrl=">
+           <img alt="vn" class="icon-language" src="vn.png">
+           Tiếng Việt
+          </span>
+         </li>
+        </ul>
+       </div>
+      </nav>
+
+
+      <ul class="site-user-menu">
+       <li class="dropdown notify">
+        <a title="Thông báo" id="notify" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+         aria-haspopup="true" aria-expanded="false">
+         <i class="far fa-bell"></i>
+         <span id="notification-count" class="label label-warning"></span>
+        </a>
+        <div class="dropdown-menu">
+         <ul id="list-notify">
+          <li class="header">Thông báo</li>
+         </ul>
+         <div id="view-all-notify"><a href="/notification">Xem toàn bộ</a></div>
+        </div>
+       </li>
+       <li class="dropdown header-user-profile">
+        <a href="#" class="dropdown-toggle btn--profile" title="dangvanquy200498@gmail.com">
+         <img alt="dangvanquy200498@gmail.com" class="btn--img" src="<%= user.picture%>">
+        </a>
+        <ul class="dropdown-menu dropdown-menu-user">
+         <li><a href="/user/information">Thông tin của tôi</a></li>
+         <li role="separator" class="divider"></li>
+         <li><a href="/profile/5838384">Hồ sơ của tôi</a></li>
+         <li role="separator" class="divider"></li>
+         <li><a href="/classmanagement">Lớp của tôi</a></li>
+         <li role="separator" class="divider"></li>
+         <li><a id="cick-logoff" href="/logout">Thoát</a></li>
+        </ul>
+       </li>
+      </ul>
+     </div>
+    </header>
+   </article>
+   <article class="widget-navigation widget-bread-cumps-widget widget">
+
+    <div class="fb-customerchat" attribution=setup_tool page_id="2254662768188202" greeting_dialog_display="hide">
+    </div>
+   </article>
+  </div>
+ </div>
+ <main id="layout-main" class="group">
+  <div id="layout-content" class="group">
+   <div id="content" class="group">
+    <div class="zone zone-content">
+     <h1 class="hidden-title">CodeLearn - Lập tr&#236;nh mỗi ng&#224;y để trở th&#224;nh lập tr&#236;nh vi&#234;n ưu
+      t&#250;</h1>
+     <div class="wrap-home-content">
+
+      <section class="wrap-block-user home-section">
+       <div class="container">
+
+        <h2 class="welcome-user">
+         Xin chào <span><%= user.email %></span>.
+         Chào mừng bạn đã quay trở lại, tiếp tục<a class="open-tour btn btn-important" title="khám phá">khám phá</a>
+         nhé!
+        </h2>
+
+
+        <div class="wrap-main-user-profile row">
+         <div class="col-xs-12 col-md-4">
+          <div class="main-user-info">
+           <div class="header-main-user-info">
+            <div class="user-avatar">
+             <img alt="Cấp độ 1" class="level-avatar" src="User-01.svg?v=3">
+             <img alt="dangvanquy200498@gmail.com" class="img-user" src="<%= user.picture%>">
+            </div>
+            <div class="content-main-user-info">
+             <h3 class="user-name"><%= user.name%></h3>
+             <p class="main-user-des">
+             </p>
+            </div>
+           </div>
+           <div class="user-progress-block">
+            <span class="user-exp">0 EXP</span>
+            <span class="user-next-level">
+             <img src="User-02.svg?v=3" alt="CodeCamp.ViewModels.UserExpLevel" />
+            </span>
+            <div class="user-progress-bar">
+             <span class="current-progress" style="width: 0%;"></span>
+            </div>
+            <div class="level-progress">
+             <span class="current-level">Cấp độ 1</span>
+             <span class="current-progress-level">0/51</span>
+             <span class="next-level">Cấp độ 2</span>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div class="col-xs-12 col-md-8">
+          <div class="wrap-detail-user-progress">
+           <div class="row">
+            <div class="col-xs-12 col-sm-4 detail-progress-item">
+             <h4>Khoá học</h4>
+             <div class="detail-progress-content">
+              <span class="result">0/19</span>
+              <span class="result-des">0 chứng nhận</span>
+             </div>
+             <div class="item-progress-bar">
+              <span class="current-progress" style="width: 0%;"></span>
+             </div>
+            </div>
+            <div class="col-xs-12 col-sm-4 detail-progress-item">
+             <h4>Luyện tập</h4>
+             <div class="detail-progress-content">
+              <span class="result">0/1550</span>
+             </div>
+             <div class="item-progress-bar">
+              <span class="current-progress" style="width:0%;"></span>
+             </div>
+            </div>
+            <div class="col-xs-12 col-sm-4 detail-progress-item">
+             <h4>Thứ hạng tốt nhất</h4>
+             <div class="detail-progress-content">
+              <span class="result">0/0<span class="result-des">cuộc thi</span></span>
+             </div>
+             <div class="item-progress-bar">
+              <span class="current-progress" style="width:0%;"></span>
+             </div>
+            </div>
+           </div>
+           
+          </div>
+         </div>
+        </div>
+
+       </div>
+      </section>
+
+
+      <section class="wrap-block-courses home-section">
+       <div class="container">
+        <h3 class="heading-block">Khóa học <a href="/learning" title="">Xem tất cả</a></h3>
+        <div class="wrap-cl-tabs-control">
+         <span class="mobile-dropdown-control">
+          <select class="mobile-dropdown-control-select">
+           <option value="#suggest-courses" selected>Khóa học gợi ý</option>
+           <option value="#recent-courses" disabled>Đang học (0)</option>
+           <option value="#finish-courses" disabled>Đã hoàn thành (0)</option>
+          </select>
+          <i class="ion-ios-arrow-down"></i>
+         </span>
+         <ul class="cl-tabs-control">
+          <li><a onclick="initSlick();" href="#suggest-courses" class="cl-tab-control-item active"
+            title="Khóa học gợi ý">Khóa học gợi ý</a></li>
+          <li><a onclick="initSlick();" href="#recent-courses" class="cl-tab-control-item disabled"
+            title="Đang học">Đang học (0)</a></li>
+          <li><a onclick="initSlick();" href="#finish-courses" class="cl-tab-control-item disabled"
+            title="Đã hoàn thành">Đã hoàn thành (0)</a></li>
+         </ul>
+        </div>
+        <div class="wrap-course-tabs">
+
+         <div id="suggest-courses" class="cl-tab-item active">
+          <div class="row list-courses">
+           <article class="grid-style col-xs-12 col-sm-4 col-lg-3">
+            <a title="Lập tr&#236;nh hướng đối tượng trong C++" href="/learning/lap-trinh-huong-doi-tuong-trong-cpp"
+             class="wrap-course-item">
+             <div class="course-thumb">
+              <div class="cl-badge  hot">
+               <span>Nổi bật</span>
+              </div>
+              <img src="fa2bdb40f4e449dca4514de8c8bca52d.jpg"
+               alt="Lập tr&#236;nh hướng đối tượng trong C++">
+             </div>
+             <div class="view-content">
+              <h3 class="course-title">
+               Lập tr&#236;nh hướng đối tượng trong C++
+              </h3>
+              <p>Lập tr&#236;nh hướng đối tượng (Object-Oriented-Programming) l&#224; phương ph&#225;p lập tr&#236;nh
+               dựa tr&#234;n đối tượng để t&#236;m ra bản chất của vấn đề. Kh&#243;a học C++ OOP gi&#250;p c&#225;c lập
+               tr&#236;nh vi&#234;n học được kỹ thuật lập tr&#236;nh m&#224; tất cả logic, y&#234;u cầu thực tế đều được
+               x&#226;y dựng xoay quanh c&#225;c đối tượng. Hiểu được c&#225;ch thức hoạt động của C++ OOP sẽ l&#224;m
+               đơn giản h&#243;a việc bảo tr&#236; v&#224; dễ d&#224;ng mở rộng trong việc thiết kế phần mềm.</p>
+              <div class="course-info">
+               <span class="lession-count">
+                <i class="cl-icon-desktop"></i>48
+               </span>
+               <span class="time">
+                <i class="cl-icon-clock"></i>40:00:00
+               </span>
+               <span class="btn btn-round" title="Lập tr&#236;nh hướng đối tượng trong C++">Học ngay</span>
+              </div>
+             </div>
+            </a>
+           </article>
+           <article class="grid-style col-xs-12 col-sm-4 col-lg-3">
+            <a title="Thực h&#224;nh với SQL" href="/learning/thuc-hanh-voi-sql" class="wrap-course-item">
+             <div class="course-thumb">
+              <div class="cl-badge  new">
+               <span>Khóa mới</span>
+              </div>
+              <img src="/CodeCamp/CodeCamp/Upload/Course/39d6cf7a07b94a0991fe3e68641417b4.jpg"
+               alt="Thực h&#224;nh với SQL">
+             </div>
+             <div class="view-content">
+              <h3 class="course-title">
+               Thực h&#224;nh với SQL
+              </h3>
+              <p>Kh&#243;a học n&#224;y sẽ gi&#250;p bạn biết về một số chức năng ch&#237;nh cần thiết để sắp xếp, lọc
+               v&#224; ph&#226;n loại th&#244;ng tin trong cơ sở dữ liệu quan hệ, mở rộng bộ c&#244;ng cụ SQL của bạn
+               v&#224; gi&#250;p bạn c&#243; khả năng giải quyết c&#225;c vấn đề phức tạp hơn th&#244;ng qua bộ
+               c&#244;ng cụ n&#224;y.
+               Y&#234;u cầu: Bạn cần ho&#224;n th&#224;nh kh&#243;a L&#224;m quen với SQL để c&#243; kiến thức cơ bản
+               trước khi tham gia kh&#243;a học n&#224;y.</p>
+              <div class="course-info">
+               <span class="lession-count">
+                <i class="cl-icon-desktop"></i>98
+               </span>
+               <span class="time">
+                <i class="cl-icon-clock"></i>20:00:00
+               </span>
+               <span class="btn btn-round" title="Thực h&#224;nh với SQL">Học ngay</span>
+              </div>
+             </div>
+            </a>
+           </article>
+           <article class="grid-style col-xs-12 col-sm-4 col-lg-3">
+            <a title="C++ cho người mới bắt đầu" href="/learning/cpp-cho-nguoi-moi-bat-dau" class="wrap-course-item">
+             <div class="course-thumb">
+              <div class="cl-badge  hot">
+               <span>Nổi bật</span>
+              </div>
+              <img src="/CodeCamp/CodeCamp/Upload/Course/bf4dca390c5742bda4dbf6344e859eb9.jpg"
+               alt="C++ cho người mới bắt đầu">
+             </div>
+             <div class="view-content">
+              <h3 class="course-title">
+               C++ cho người mới bắt đầu
+              </h3>
+              <p>Kh&#243;a học lập tr&#236;nh C++ cơ bản cho người mới bắt đầu. Kh&#243;a học n&#224;y sẽ cung cấp những
+               kiến thức cơ bản, dễ hiểu nhất về ng&#244;n ngữ lập tr&#236;nh C++.</p>
+              <div class="course-info">
+               <span class="lession-count">
+                <i class="cl-icon-desktop"></i>89
+               </span>
+               <span class="time">
+                <i class="cl-icon-clock"></i>20:00:00
+               </span>
+               <span class="btn btn-round" title="C++ cho người mới bắt đầu">Học ngay</span>
+              </div>
+             </div>
+            </a>
+           </article>
+           <article class="grid-style col-xs-12 col-sm-4 col-lg-3">
+            <a title="Python cơ bản" href="/learning/python-co-ban" class="wrap-course-item">
+             <div class="course-thumb">
+              <img src="/CodeCamp/CodeCamp/Upload/Course/cf55489ccd434e8c81c61e6fffc9433f.jpg" alt="Python cơ bản">
+             </div>
+             <div class="view-content">
+              <h3 class="course-title">
+               Python cơ bản
+              </h3>
+              <p>Kh&#243;a học lập tr&#236;nh Python cơ bản với c&#225;c b&#224;i tập v&#224; l&#253; thuyết dễ hiểu,
+               học xong bạn c&#243; thể tự tin để tới với c&#225;c chủ đề n&#226;ng cao hơn của Python.</p>
+              <div class="course-info">
+               <span class="lession-count">
+                <i class="cl-icon-desktop"></i>59
+               </span>
+               <span class="time">
+                <i class="cl-icon-clock"></i>26:00:00
+               </span>
+               <span class="btn btn-round" title="Python cơ bản">Học ngay</span>
+              </div>
+             </div>
+            </a>
+           </article>
+          </div>
+         </div>
+
+         <div id="recent-courses" class="cl-tab-item">
+          <div class="row list-courses">
+          </div>
+         </div>
+
+         <div id="finish-courses" class="cl-tab-item">
+          <div class="row list-courses">
+          </div>
+         </div>
+        </div>
+       </div>
+      </section>
+
+
+      <section class="home-section code-fights-section">
+       <div class="container">
+        <h3 class="heading-block">
+         Cuộc thi lập trình
+         <a href="/fights" title="Xem tất cả">Xem tất cả</a>
+        </h3>
+        <div class="row list-code-fights">
+         <article class="code-fight-item col-xs-12 col-md-6 batch-ended">
+          <a class="wrap-code-fight-item" href="/fights/detail/5448596" title="CODE CHALLENGE_BATCH 1 ">
+           <div class="code-fight-thumb">
+            <img alt="CODE CHALLENGE_BATCH 1 " src="/CodeCamp/CodeCamp/Upload/0e4be5b67cd9485e84eec3d8792a8797.png" />
+           </div>
+           <div class="wrap-content-code-fight">
+            <h3 class="code-fight-title">
+             CODE CHALLENGE_BATCH 1
+            </h3>
+            <div class="code-fight-description">
+             Thử th&#225;ch thi vui thưởng thật d&#224;nh cho c&#225;c bạn trẻ đam m&#234; c&#244;ng nghệ, th&#237;ch
+             kh&#225;m ph&#225; v&#224; l&#224;m chủ ng&#244;n ngữ số.
+            </div>
+            <div class="code-fight-info">
+             <div class="code-fight-info-left">
+              <p>Đã đăng ký <span class="important-color">56</span> thí sinh</p>
+              <p class="code-fight-status important-color">Cuộc thi đã kết thúc ngày 16-12-2020</p>
+             </div>
+             <div class="code-fight-info-right">
+              <span class="btn btn-view">
+               Đã kết thúc </span>
+             </div>
+            </div>
+           </div>
+          </a>
+         </article>
+         <article class="code-fight-item col-xs-12 col-md-6 batch-ended">
+          <a class="wrap-code-fight-item" href="/fights/detail/5448578" title="CODE CHALLENGE_BATCH 2">
+           <div class="code-fight-thumb">
+            <img alt="CODE CHALLENGE_BATCH 2" src="/CodeCamp/CodeCamp/Upload/6445746b6b1a4481a69f07b61edb6226.png" />
+           </div>
+           <div class="wrap-content-code-fight">
+            <h3 class="code-fight-title">
+             CODE CHALLENGE_BATCH 2
+            </h3>
+            <div class="code-fight-description">
+             Thử th&#225;ch thi vui thưởng thật d&#224;nh cho c&#225;c bạn trẻ đam m&#234; c&#244;ng nghệ, th&#237;ch
+             kh&#225;m ph&#225; v&#224; l&#224;m chủ ng&#244;n ngữ số.
+            </div>
+            <div class="code-fight-info">
+             <div class="code-fight-info-left">
+              <p>Đã đăng ký <span class="important-color">37</span> thí sinh</p>
+              <p class="code-fight-status important-color">Cuộc thi đã kết thúc ngày 16-12-2020</p>
+             </div>
+             <div class="code-fight-info-right">
+              <span class="btn btn-view">
+               Đã kết thúc </span>
+             </div>
+            </div>
+           </div>
+          </a>
+         </article>
+        </div>
+       </div>
+      </section>
+
+      <section class="mid-bottom-section home-section">
+       <div class="container">
+        <div class="row">
+
+         <div class="col-xs-12 col-lg-7">
+          <h3 class="heading-block">
+           Luyện tập hàng ngày
+           <a href="/training" title="Xem tất cả">Xem tất cả</a>
+          </h3>
+          <div class="wrap-training-section wrap-home-block">
+           <ul class="list-training-summary">
+            <li class="easy-level">
+             <span class="summary-value">0/854</span>
+             Đơn giản
+            </li>
+            <li class="normal-level">
+             <span class="summary-value">0/696</span>
+             Trung bình
+            </li>
+           </ul>
+           <div class="row list-task-training">
+            <article class="col-xs-12 col-sm-4 training-item">
+             <a href="/training/detail/18003" title="isPowerOfFour" class="wrap-training-content">
+              <div class="task-item-detail">
+               <h3 class="task-title">
+                isPowerOfFour
+               </h3>
+               <span class="badge badge-secondary easy">Đơn giản</span>
+               <div class="wrap-list-tag">
+                <ul class="list-tag">
+                 <li class="tag tag-default">Bit Manipulation</li>
+                </ul>
+               </div>
+              </div>
+              <ul class="task-info-info">
+               <li title="3849/4217">
+                <i class="cl-icon-users-alt"></i>
+                <span class="span-user-submit">3849/4217</span>
+               </li>
+               <li>
+                <i class="cl-icon-comment-dots"></i>
+                <span class="span-comment">231</span>
+               </li>
+               <li>
+                <i class="cl-icon-heart"></i>
+                <span class="task-point">120</span>
+               </li>
+              </ul>
+             </a>
+            </article>
+            <article class="col-xs-12 col-sm-4 training-item">
+             <a href="/training/detail/23151" title="isSortedArray" class="wrap-training-content">
+              <div class="task-item-detail">
+               <h3 class="task-title">
+                isSortedArray
+               </h3>
+               <span class="badge badge-secondary easy">Đơn giản</span>
+               <div class="wrap-list-tag">
+                <ul class="list-tag">
+                 <li class="tag tag-default">Array</li>
+                </ul>
+               </div>
+              </div>
+              <ul class="task-info-info">
+               <li title="2867/2904">
+                <i class="cl-icon-users-alt"></i>
+                <span class="span-user-submit">2867/2904</span>
+               </li>
+               <li>
+                <i class="cl-icon-comment-dots"></i>
+                <span class="span-comment">77</span>
+               </li>
+               <li>
+                <i class="cl-icon-heart"></i>
+                <span class="task-point">100</span>
+               </li>
+              </ul>
+             </a>
+            </article>
+            <article class="col-xs-12 col-sm-4 training-item">
+             <a href="/training/detail/4538" title="maxSubarray" class="wrap-training-content">
+              <div class="task-item-detail">
+               <h3 class="task-title">
+                maxSubarray
+               </h3>
+               <span class="badge badge-secondary medium">Trung b&#236;nh</span>
+               <div class="wrap-list-tag">
+                <ul class="list-tag">
+                 <li class="tag tag-default">Algorithm</li>
+                 <li class="tag tag-default">Sequence</li>
+                </ul>
+               </div>
+              </div>
+              <ul class="task-info-info">
+               <li title="779/864">
+                <i class="cl-icon-users-alt"></i>
+                <span class="span-user-submit">779/864</span>
+               </li>
+               <li>
+                <i class="cl-icon-comment-dots"></i>
+                <span class="span-comment">33</span>
+               </li>
+               <li>
+                <i class="cl-icon-heart"></i>
+                <span class="task-point">200</span>
+               </li>
+              </ul>
+             </a>
+            </article>
+           </div>
+          </div>
+         </div>
+
+
+         <div class="col-xs-12 col-lg-5">
+          <h3 class="heading-block">
+           Chia sẻ
+           <a href="/sharing" title="Xem tất cả">Xem tất cả</a>
+          </h3>
+          <div class="wrap-home-block blog-block">
+           <article class="blog-item list-style">
+            <a href="/sharing/hack-hon-5000-tai-khoan-the-nao" class="wrap-blog-item"
+             title="T&#244;i Đ&#227; Hack Hơn 5000 T&#224;i Khoản Trong 3 Ng&#224;y Như Thế N&#224;o?">
+             <div class="wrap-blog-thumb">
+              <img src="/Upload/Blog/cach-toi-phising-cac-tai-khoan-facebook-63743427133.3149.jpg"
+               alt="T&#244;i Đ&#227; Hack Hơn 5000 T&#224;i Khoản Trong 3 Ng&#224;y Như Thế N&#224;o?">
+              <div class="cl-badge hot">
+               <span>
+                Nổi bật
+               </span>
+              </div>
+             </div>
+             <div class="wrap-blog-item-content">
+              <h3 class="blog-title">
+               T&#244;i Đ&#227; Hack Hơn 5000 T&#224;i Khoản Trong 3 Ng&#224;y Như Thế N&#224;o?
+              </h3>
+              <div class="user-rating">
+               <span class="star-rating">
+                <span style="width:100.0%"></span>
+               </span>
+              </div>
+              <p class="short-desc">Đ&#226;y l&#224; kiến thức phổ cập về an ninh mạng cho mọi người, đồng thời phản
+               &#225;nh một thực trạng nhức nhối, mọi người đều n&#234;n t&#236;m hiểu v&#224; biết c&#225;ch bảo vệ
+               th&#244;ng tin của m&#236;nh</p>
+             </div>
+            </a>
+           </article>
+           <article class="blog-item list-style">
+            <a href="/sharing/sandbox-phuong-phap-giup-tu-hoc" class="wrap-blog-item"
+             title="Sandbox – Phương Ph&#225;p Gi&#250;p Tự Học Bất Cứ Thứ G&#236;">
+             <div class="wrap-blog-thumb">
+              <img src="/Upload/Blog/sandbox-phuong-phap-giup-tu-hoc-63743684965.8816.jpg"
+               alt="Sandbox – Phương Ph&#225;p Gi&#250;p Tự Học Bất Cứ Thứ G&#236;">
+              <div class="cl-badge top-trend">
+               <span>
+                Xu hướng
+               </span>
+              </div>
+             </div>
+             <div class="wrap-blog-item-content">
+              <h3 class="blog-title">
+               Sandbox – Phương Ph&#225;p Gi&#250;p Tự Học Bất Cứ Thứ G&#236;
+              </h3>
+              <div class="user-rating">
+               <span class="star-rating">
+                <span style="width:100.0%"></span>
+               </span>
+              </div>
+              <p class="short-desc">Mặc d&#249; c&#243; trong tay quyền năng truy cập th&#244;ng tin đ&#225;ng kinh ngạc
+               nhưng rất &#237;t người tận dụng được cho việc tự học. Vậy phương ph&#225;p Sandboxgi&#250;p bạn tự học
+               thế n&#224;o?</p>
+             </div>
+            </a>
+           </article>
+           <article class="blog-item list-style">
+            <a href="/sharing/4-cu-lua-khi-bat-dau-su-nghiep-lap-trinh" class="wrap-blog-item"
+             title="4 C&#250; Lừa Khi Newbie Bắt Đầu Sự Nghiệp Lập Tr&#236;nh">
+             <div class="wrap-blog-thumb">
+              <img src="/Upload/Blog/4-cu-lua-khi-bat-dau-su-nghiep-lap-trinh-63743876059.3284.jpg"
+               alt="4 C&#250; Lừa Khi Newbie Bắt Đầu Sự Nghiệp Lập Tr&#236;nh">
+              <div class="cl-badge new">
+               <span>
+                Bài viết mới
+               </span>
+              </div>
+             </div>
+             <div class="wrap-blog-item-content">
+              <h3 class="blog-title">
+               4 C&#250; Lừa Khi Newbie Bắt Đầu Sự Nghiệp Lập Tr&#236;nh
+              </h3>
+              <div class="user-rating">
+               <span class="star-rating">
+                <span style="width:100.0%"></span>
+               </span>
+              </div>
+              <p class="short-desc">C&#243; rất nhiều nguy&#234;n tắc ngầm khi bạn tham gia con đường lập tr&#236;nh,
+               V&#224; đ&#226;y l&#224; 4 luật ngầm đ&#226;u đ&#243; bạn sẽ gặp. Nhưng n&#243;i nhỏ cho bạn biết,
+               đ&#243; đều l&#224; những &quot;c&#250; lừa&quot;.</p>
+             </div>
+            </a>
+           </article>
+          </div>
+         </div>
+
+        </div>
+       </div>
+      </section>
+      <section class="bottom-section home-section">
+       <div class="container">
+        <div class="row">
+         <div class="col-xs-12 col-md-8">
+
+          <h3 class="heading-block">
+           Kỹ năng của bạn
+          </h3>
+          <div class="wrap-home-block">
+           <ul class="your-skills">
+            <li>
+             <img src="C.svg" alt="C">
+             <span>C</span>
+             <div class="star-number pull-right" data-level="5">
+              <span class="star-rating">
+               <span style="width:0%"></span>
+              </span>
+             </div>
+            </li>
+            <li>
+             <img src="Csharp.svg" alt="C#">
+             <span>C#</span>
+             <div class="star-number pull-right" data-level="5">
+              <span class="star-rating">
+               <span style="width:0%"></span>
+              </span>
+             </div>
+            </li>
+            <li>
+             <img src="Cplus.svg" alt="C++">
+             <span>C++</span>
+             <div class="star-number pull-right" data-level="5">
+              <span class="star-rating">
+               <span style="width:0%"></span>
+              </span>
+             </div>
+            </li>
+            <li>
+             <img src="Go.svg" alt="Go">
+             <span>Go</span>
+             <div class="star-number pull-right" data-level="5">
+              <span class="star-rating">
+               <span style="width:0%"></span>
+              </span>
+             </div>
+            </li>
+            <li>
+             <img src="Java.svg" alt="Java">
+             <span>Java</span>
+             <div class="star-number pull-right" data-level="5">
+              <span class="star-rating">
+               <span style="width:0%"></span>
+              </span>
+             </div>
+            </li>
+            <li>
+             <img src="JS.svg" alt="JavaScript">
+             <span>JavaScript</span>
+             <div class="star-number pull-right" data-level="5">
+              <span class="star-rating">
+               <span style="width:0%"></span>
+              </span>
+             </div>
+            </li>
+            <li>
+             <img src="mysql.svg" alt="MySql">
+             <span>MySql</span>
+             <div class="star-number pull-right" data-level="5">
+              <span class="star-rating">
+               <span style="width:0%"></span>
+              </span>
+             </div>
+            </li>
+            <li>
+             <img src="postgresql.svg" alt="Postgresql">
+             <span>Postgresql</span>
+             <div class="star-number pull-right" data-level="5">
+              <span class="star-rating">
+               <span style="width:0%"></span>
+              </span>
+             </div>
+            </li>
+            <li>
+             <img src="Python.svg" alt="Python2">
+             <span>Python2</span>
+             <div class="star-number pull-right" data-level="5">
+              <span class="star-rating">
+               <span style="width:0%"></span>
+              </span>
+             </div>
+            </li>
+            <li>
+             <img src="Python.svg" alt="Python3">
+             <span>Python3</span>
+             <div class="star-number pull-right" data-level="5">
+              <span class="star-rating">
+               <span style="width:0%"></span>
+              </span>
+             </div>
+            </li>
+           </ul>
+          </div>
+
+         </div>
+         <div class="col-xs-12 col-md-4">
+          <h3 class="heading-block">
+           Hoạt động của bạn
+          </h3>
+          <div class="wrap-home-block home-ui-block flex forum-activity" id="user-activity">
+           <div class="activity-chart-grid">
+            <table>
+             <tbody>
+              <tr class="grid-row">
+               <td class="grid-item">
+                <div class="grid-col-header" data-level="1">T2</div>
+               </td>
+               <td class="grid-item">
+                <div class="grid-col-header" data-level="1">T3</div>
+               </td>
+               <td class="grid-item">
+                <div class="grid-col-header" data-level="1">T4</div>
+               </td>
+               <td class="grid-item">
+                <div class="grid-col-header" data-level="1">T5</div>
+               </td>
+               <td class="grid-item">
+                <div class="grid-col-header" data-level="1">T6</div>
+               </td>
+               <td class="grid-item">
+                <div class="grid-col-header" data-level="1">T7</div>
+               </td>
+               <td class="grid-item">
+                <div class="grid-col-header" data-level="1">CN</div>
+               </td>
+              </tr>
+              <tr class="grid-row">
+               <td class="grid-item">
+                <div class="grid-cell" data-level="1">23/11</div>
+               </td>
+               <td class="grid-item">
+                <div class="grid-cell hidden-label" data-level="1">24/11</div>
+               </td>
+               <td class="grid-item">
+                <div class="grid-cell hidden-label" data-level="1">25/11</div>
+               </td>
+               <td class="grid-item">
+                <div class="grid-cell hidden-label" data-level="1">26/11</div>
+               </td>
+               <td class="grid-item">
+                <div class="grid-cell hidden-label" data-level="1">27/11</div>
+               </td>
+               <td class="grid-item">
+                <div class="grid-cell hidden-label" data-level="1">28/11</div>
+               </td>
+               <td class="grid-item">
+                <div class="grid-cell hidden-label" data-level="1">29/11</div>
+               </td>
+              </tr>
+              <tr class="grid-row">
+               <td class="grid-item">
+                <div class="grid-cell hidden-label" data-level="1">30/11</div>
+               </td>
+               <td class="grid-item">
+                <div class="grid-cell" data-level="1">1/12</div>
+               </td>
+               <td class="grid-item">
+                <div class="grid-cell hidden-label" data-level="1">2/12</div>
+               </td>
+               <td class="grid-item">
+                <div class="grid-cell hidden-label" data-level="1">3/12</div>
+               </td>
+               <td class="grid-item">
+                <div class="grid-cell hidden-label" data-level="1">4/12</div>
+               </td>
+               <td class="grid-item">
+                <div class="grid-cell hidden-label" data-level="1">5/12</div>
+               </td>
+               <td class="grid-item">
+                <div class="grid-cell hidden-label" data-level="1">6/12</div>
+               </td>
+              </tr>
+              <tr class="grid-row">
+               <td class="grid-item">
+                <div class="grid-cell hidden-label" data-level="1">7/12</div>
+               </td>
+               <td class="grid-item">
+                <div class="grid-cell hidden-label" data-level="1">8/12</div>
+               </td>
+               <td class="grid-item">
+                <div class="grid-cell hidden-label" data-level="1">9/12</div>
+               </td>
+               <td class="grid-item">
+                <div class="grid-cell hidden-label" data-level="1">10/12</div>
+               </td>
+               <td class="grid-item">
+                <div class="grid-cell hidden-label" data-level="1">11/12</div>
+               </td>
+               <td class="grid-item">
+                <div class="grid-cell hidden-label" data-level="1">12/12</div>
+               </td>
+               <td class="grid-item">
+                <div class="grid-cell hidden-label" data-level="1">13/12</div>
+               </td>
+              </tr>
+              <tr class="grid-row">
+               <td class="grid-item">
+                <div class="grid-cell hidden-label" data-level="1">14/12</div>
+               </td>
+               <td class="grid-item">
+                <div class="grid-cell hidden-label" data-level="1">15/12</div>
+               </td>
+               <td class="grid-item">
+                <div class="grid-cell hidden-label" data-level="1">16/12</div>
+               </td>
+               <td class="grid-item">
+                <div class="grid-cell hidden-label" data-level="1">17/12</div>
+               </td>
+               <td class="grid-item">
+                <div class="grid-cell hidden-label" data-level="1">18/12</div>
+               </td>
+               <td class="grid-item">
+                <div class="grid-cell hidden-label" data-level="1">19/12</div>
+               </td>
+               <td class="grid-item">
+                <div class="grid-cell hidden-label" data-level="1">20/12</div>
+               </td>
+              </tr>
+              <tr class="grid-row">
+               <td class="grid-item">
+                <div class="grid-cell" data-level="1">21/12</div>
+               </td>
+               <td class="grid-item">
+                <div class="grid-cell hidden-label grid-padding" data-level="1">1/1</div>
+               </td>
+               <td class="grid-item">
+                <div class="grid-cell hidden-label grid-padding" data-level="1">1/1</div>
+               </td>
+               <td class="grid-item">
+                <div class="grid-cell hidden-label grid-padding" data-level="1">1/1</div>
+               </td>
+               <td class="grid-item">
+                <div class="grid-cell hidden-label grid-padding" data-level="1">1/1</div>
+               </td>
+               <td class="grid-item">
+                <div class="grid-cell hidden-label grid-padding" data-level="1">1/1</div>
+               </td>
+               <td class="grid-item">
+                <div class="grid-cell hidden-label grid-padding" data-level="1">1/1</div>
+               </td>
+              </tr>
+             </tbody>
+            </table>
+           </div>
+           <div class="activity-legend">
+            <div class="legend-left">
+             <span class="legend-label">Mức độ</span>
+             <div class="legend-activity-bar normal" data-level="1"></div>
+             <div class="legend-activity-bar normal" data-level="2"></div>
+             <div class="legend-activity-bar normal" data-level="3">
+             </div>
+             <div class="legend-activity-bar normal" data-level="4"></div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </section>
+     </div>
+
+     <div class="modal fade" id="buy-now-support" role="dialog">
+      <div class="modal-dialog">
+
+       <div class="modal-content">
+        <div class="modal-header">
+         <button type="button" class="close" data-dismiss="modal"></button>
+         <h4 class="modal-title">Support Codelearn</h4>
+        </div>
+        <div class="modal-body">
+         <p>Vui lòng liên hệ tới email: <a
+           href="/cdn-cgi/l/email-protection#41323431312e333501222e25242d2420332f6f282e"><span class="__cf_email__"
+            data-cfemail="5a292f2a2a35282e1a39353e3f363f3b2834743335">[email&#160;protected]</span></a> để được hỗ trợ
+          chi tiết.</p>
+        </div>
+        <div class="modal-footer">
+         <button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+ </main>
+ <footer id="footer" class="group codecamp-footer">
+  <div class="zone zone-footer">
+   <div class=" main-footer">
+    <div class="container">
+     <div class="row">
+      <div class="col-xs-12 col-md-6 introduction footer-column">
+       <div class="logo-codelearn">
+        <img src="codelearn-logo.svg" alt="CodeLearn" />
+       </div>
+       <p>
+        CodeLearn là nền tảng tương tác trực tuyến hỗ trợ người dùng học tập, thực hành, thi đấu và đánh giá kỹ năng lập
+        trình một cách nhanh chóng và chính xác.
+       </p>
+       <a href="https://www.facebook.com/CodeLearnFanpage" title="Facebook" target="_blank" class="social-button">
+        <i class="cl-icon-facebook-f"></i>
+       </a>
+       <a href="https://www.youtube.com/channel/UCpt3dSDGk5fC7uU9OeFG5ig" title="Youtube" target="_blank"
+        class="social-button">
+        <i class="cl-icon-youtube"></i>
+       </a>
+       <a href="https://twitter.com/codelearn_io" title="Twitter" target="_blank" class="social-button">
+        <i class="cl-icon-twitter-full"></i>
+       </a>
+       <a href="https://www.instagram.com/codelearn.io/" title="Instagram" target="_blank" class="social-button">
+        <i class="cl-icon-instagram"></i>
+       </a>
+      </div>
+      <div class="col-xs-12 col-sm-4 col-md-2 links footer-column">
+       <h4>Liên kết</h4>
+       <p><a href="/learning" class="link-menu" title="Học tập">Học tập</a></p>
+       <p><a href="/training" class="link-menu" title="Luyện tập">Luyện tập</a></p>
+       <p><a href="/fights" class="link-menu" title="Cuộc thi">Cuộc thi</a></p>
+       <p><a href="/game/index" class="link-menu" title="Trò chơi">Trò chơi</a></p>
+      </div>
+      <div class="col-xs-12 col-sm-4 col-md-2 about footer-column">
+       <h4>Thông tin</h4>
+       <p><a href="/sharing" class="link-menu" title="Chia sẻ">Chia sẻ</a></p>
+       <p><a href="/aboutus" title="Về chúng tôi">Về chúng tôi</a></p>
+       <p><a href="/terms" title="Điều khoản sử dụng">Điều khoản sử dụng</a></p>
+      </div>
+      <div class="col-xs-12 col-sm-4 col-md-2 help footer-column">
+       <h4>Trợ giúp</h4>
+       <p><a href="/help" title="Hỗ trợ">Hỗ trợ</a></p>
+       <p><a href="/discussion" title="Thảo luận">Thảo luận</a></p>
+       <p><a href="/cdn-cgi/l/email-protection#2c5f595c5c435e586c4f43484940494d5e42024543"
+         title="Liên hệ với chúng tôi">Liên hệ với chúng tôi</a></p>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="col-xs-12 right-reserved">
+    <span class="powerby">
+     <img src="logo-fpt-footer.svg" alt="Fpt software" class="fpt-logo">
+     Cung cấp bởi <a href="/">CodeLearn</a>
+    </span>
+    <span class="copyright">&#169; 2020.</span>
+    <span>Đã đăng ký bản quyền rev 12/13/2020 9:14:05 PM</span>
+   </div>
+  </div>
+ </footer>
+ <script src="slick.js" type="text/javascript"></script>
+ 
+ <script src="home.js" type="text/javascript"></script>
+ 
+ 
+
+ <div id="fb-root"></div>
+<script src="/socket.io/socket.io.js"></script>
+<script>
+  const socket = io();
+  let user = '<%- JSON.stringify(user) %>'
+  console.log(user);
+  socket.emit('login', {users: user});
+
+  socket.on('listUserOnline', data => {
+    console.log(data);
+  })
+</script>
+ <script type="application/ld+json">
+            {
+            "@context": "http://schema.org",
+            "@type": "Organization",
+            "name": "CodeLearn",
+            "url": "https://codelearn.io",
+            "address": "Ha Noi, Viet Nam",
+            "sameAs": [
+            "https://www.facebook.com/CodeLearnFanpage/",
+            "https://www.linkedin.com/company/codelearnio",
+            "https://twitter.com/codelearn_io"
+            ]
+            }
+        </script>
+
+        
+
+ <noscript>
+  <img height="1" width="1" style="display:none" alt=""
+   src="https://www.facebook.com/tr?id=700313553710795&ev=PageView&noscript=1" />
+ </noscript>
+</body>
+
+</html>

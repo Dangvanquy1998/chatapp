@@ -1,0 +1,26 @@
+{
+  "name": "oauth-google",
+  "version": "1.0.0",
+  "description": "node oauth-google",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon server.js",
+    "start": "node server.js"
+  },
+  "author": "quydv",
+  "license": "ISC",
+  "dependencies": {
+    "cookie-parser": "^1.4.5",
+    "dotenv": "^8.2.0",
+    "ejs": "^3.1.5",
+    "express": "^4.17.1",
+    "google-auth-library": "^6.1.3",
+    "moment": "^2.29.1",
+    "mongoose": "^5.11.8",
+    "path": "^0.12.7",
+    "socket.io": "^3.0.4"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6"
+  }
+}

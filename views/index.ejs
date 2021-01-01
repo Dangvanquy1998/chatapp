@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+<html lang="vi" class="static dir-ltr codecamp-adauthorization" dir="ltr">
+
+<head>
+ <meta charset="utf-8" />
+ <meta name="description"
+  content="Học lập trình trở nên đơn giản và thú vị hơn bao giờ hết. Bạn sẽ trở thành một lập trình viên tài năng thông qua quá trình học tập và luyện tập mỗi ngày." />
+ <meta name="author" content="CodeLearn" />
+ <link rel="canonical" href="/" />
+ <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,user-scalable=0" />
+ <title>Học lập trình dễ dàng bắt đầu cùng CodeLearn</title>
+
+ <meta property="og:title" content="Học lập trình dễ dàng bắt đầu cùng CodeLearn" />
+ <meta property="og:type" content="website" />
+ <meta property="og:url" content="https://codelearn.io/" />
+ <meta property="og:description"
+  content="Học lập trình trở nên đơn giản và thú vị hơn bao giờ hết. Bạn sẽ trở thành một lập trình viên tài năng thông qua quá trình học tập và luyện tập mỗi ngày." />
+ <meta property="og:image" content="codelearn-share.jpg" />
+ <meta property="fb:app_id" content="648326032295473" />
+
+
+ <meta name="twitter:card" content="summary">
+ <meta name="twitter:url" content="https://codelearn.io/">
+ <meta name="twitter:title" content="Học lập trình dễ dàng bắt đầu cùng CodeLearn">
+ <meta name="twitter:description"
+  content="Học lập trình trở nên đơn giản và thú vị hơn bao giờ hết. Bạn sẽ trở thành một lập trình viên tài năng thông qua quá trình học tập và luyện tập mỗi ngày.">
+ <meta name="twitter:image" content="content/codelearn-share.jpg" />
+ <meta name="twitter:site" content="@Codelearn.io">
+ <meta name="twitter:creator" content="@Codelearn.io">
+
+ <meta name="google-signin-client_id"
+  content="16523143533-ovv9lj8c7i8sv36sv3lguom0msmdk8ah.apps.googleusercontent.com" />
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+<meta name="google-signin-client_id" content="391622478031-db4vurbbm546jpb0446dpgnmaodppi6f.apps.googleusercontent.com">
+ <script async src="https://www.googletagmanager.com/gtag/js?id=UA-141685371-1"></script>
+ <script>
+  var isGetNotification = true;
+  var isNotCountComment = false;
+
+  var s3Storage = '';
+  var resourcePath = '/Resources';
+  var strAuthen = '';
+  var faceId = '648326032295473';
+  var isLoadedFacebook = 'False';
+  if (strAuthen == '') {
+   var googleId = '16523143533-ovv9lj8c7i8sv36sv3lguom0msmdk8ah.apps.googleusercontent.com';
+  }
+
+  if (strAuthen == '') {
+   var LOGIN_VALIDATOR, SIGNUP_VALIDATOR;
+   function openModal(tab) {
+
+    $('#loginModal a[data-target="#' + tab + '"]').tab('show');
+    switch (tab) {
+     case 'login':
+      $(".btn--facebook").attr('title', 'Đăng nhập bằng Facebook');
+      $(".btn--google").attr('title', 'Đăng nhập bằng Google');
+      $("#loginModal .header-card").text('Đăng nhập tài khoản của bạn');
+      SIGNUP_VALIDATOR && SIGNUP_VALIDATOR.resetForm();
+      break;
+     case 'signup':
+      $(".btn--facebook").attr('title', 'Tiếp tục với Facebook');
+      $(".btn--google").attr('title', 'Tiếp tục với Google');
+      $("#loginModal .header-card").text('Đăng ký tài khoản mới');
+      LOGIN_VALIDATOR && LOGIN_VALIDATOR.resetForm();
+      break;
+    }
+   }
+  }
+
+  if ('https://codelearn.io' == location.origin.toLocaleLowerCase()) {
+   window.dataLayer = window.dataLayer || [];
+   function gtag() { dataLayer.push(arguments); }
+
+   gtag('js', new Date());
+   gtag('config', 'UA-141685371-1');
+   gtag('config', 'USER_MANAGEMENT');
+   gtag('set', { 'user_id': 'CodeLearn-Anonymous' });
+
+   // Measure Google Ads conversions
+   gtag('event', 'conversion', {
+    'send_to': 'USER_MANAGEMENT/CodeLearn-Anonymous',
+   });
+
+   window['GoogleAnalyticsObject'] = 'ga';
+   window['ga'] = window['ga'] || function () {
+    (window['ga'].q = window['ga'].q || []).push(arguments)
+   };
+   ga('set', 'userId', 'CodeLearn-Anonymous');
+  }
+
+  window.fbAsyncInit = function () {
+   FB.init({
+    appId: faceId,
+    xfbml: true,
+    version: 'v7.0'
+   });
+   FB.AppEvents.logPageView();
+   isLoadedFacebook = true;
+  };
+
+  (function (d, s, id) {
+   var js, fjs = d.getElementsByTagName(s)[0];
+   if (d.getElementById(id)) { return; }
+   js = d.createElement(s); js.id = id;
+   js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+   fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+
+ </script>
+
+ <script>
+  !function (f, b, e, v, n, t, s) {
+   if (f.fbq) return; n = f.fbq = function () {
+    n.callMethod ?
+     n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+   };
+   if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+   n.queue = []; t = b.createElement(e); t.async = !0;
+   t.src = v; s = b.getElementsByTagName(e)[0];
+   s.parentNode.insertBefore(t, s)
+  }(window, document, 'script',
+   'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '700313553710795');
+  fbq('track', 'PageView');
+ </script>
+
+ <link href="style.css" rel="stylesheet" type="text/css" />
+ <link href="skin.css" rel="stylesheet" type="text/css" />
+ <link href="bootstrap.css" rel="stylesheet" type="text/css" />
+ <link href="font.css" rel="stylesheet" type="text/css" />
+ <link href="common.css" rel="stylesheet" type="text/css" />
+ <link href="site.css" rel="stylesheet" type="text/css" />
+ <link href="login-modal.css" rel="stylesheet" type="text/css" />
+ <link href="https://fonts.googleapis.com/css?family=Sofia" rel="stylesheet"/>
+ <script src="defer_plus.js" type="text/javascript"></script>
+ <script src="jquery.js" type="text/javascript"></script>
+ <script src="bootstrap.min.js" type="text/javascript"></script>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Mulish:ital@1&display=swap" rel="stylesheet">
+ <script src="jquery.ui.min.js" type="text/javascript"></script>
+ <link href="https://use.fontawesome.com/releases/v5.0.1/css/all.css" rel="stylesheet">
+ <script src="jquery.validation.js" type="text/javascript"></script>
+ <script src="jquery.validation.1.16.0.js" type="text/javascript"></script>
+ <script src="https://www.google.com/recaptcha/api.js?render=6LcMTLMUAAAAAFLLyTIvjCj7k0bAG8ZqjnaTTrQE"
+  type="text/javascript"></script>
+ <script src="login-form.js" type="text/javascript"></script>
+ <script src="common.js" type="text/javascript"></script>
+</head>
+
+<body class="hold-transition site-body skin-sku-light layout-top-nav  ">
+ <script>
+  //<![CDATA[
+  var LANG_CURRENT = "vn";
+  const CurrentUserId = 0;
+  const NOTTIFY_USER_ACCESSKEY = 'nottifyAccessKey';
+  const IS_ADMIN = false;
+
+  PKLService.init({ strVersion: '798184607', strLangCode: 'vn', IsHasLogin: false, url: location.origin });
+        //]]>
+ </script>
+ <div class="zone zone-content">
+  <script>
+   /**shinsenter/defer.js*/
+   !function (e, o, t, n, i, r) { function c(e, t) { r ? n(e, t || 32) : i.push(e, t) } function f(e, t, n, i) { return t && o.getElementById(t) || (i = o.createElement(e || 'SCRIPT'), t && (i.id = t), n && (i.onload = n), o.head.appendChild(i)), i || {} } r = /p/.test(o.readyState), e.addEventListener('on' + t in e ? t : 'load', function () { for (r = 1; i[0];)c(i.shift(), i.shift()) }), c._ = f, e.defer = c, e.deferscript = function (e, t, n, i) { c(function () { f('', t, i).src = e }, n) } }(this, document, 'pageshow', setTimeout, []), function (s, n) { var a = 'IntersectionObserver', d = 'src', l = 'lazied', h = 'data-', m = h + l, y = 'load', p = 'forEach', b = 'getAttribute', g = 'setAttribute', v = Function(), I = s.defer || v, c = I._ || v; function A(e, t) { return [].slice.call((t || n).querySelectorAll(e)) } function e(u) { return function (e, t, o, r, c, f) { I(function (n, t) { function i(n) { !1 !== (r || v).call(n, n) && ((f || ['srcset', d, 'style'])[p](function (e, t) { (t = n[b](h + e)) && n[g](e, t) }), A('SOURCE', n)[p](i), y in n && n[y]()), n.className += ' ' + (o || l) } t = a in s ? (n = new s[a](function (e) { e[p](function (e, t) { e.isIntersecting && (t = e.target) && (n.unobserve(t), i(t)) }) }, c)).observe.bind(n) : i, A(e || u + '[' + h + d + ']:not([' + m + '])')[p](function (e) { e[b](m) || (e[g](m, u), t(e)) }) }, t) } } function t() { I(function (t, n, i, o, r) { t = A((i = '[type=deferjs]') + ':not(' + (o = '[async]') + ')').concat(A(i + o)), function e() { if (0 != t) { for (o in (i = t.shift()).parentNode.removeChild(i), i.removeAttribute('type'), n = c(i.nodeName), i) 'string' == typeof (r = i[o]) && n[o] != r && (n[o] = r); n[d] && !n.hasAttribute('async') ? n.onload = n.onerror = e : I(e, .1) } }() }, 4) } t(), s.deferstyle = function (t, n, e, i) { I(function (e) { (e = c('LINK', n, i)).rel = 'stylesheet', e.href = t }, e) }, s.deferimg = e('IMG'), s.deferiframe = e('IFRAME'), I.all = t }(this, document);
+  </script>
+
+  <div id="layout-navigation" class="group landing-header">
+   <div class="zone zone-navigation">
+    <article class="widget-navigation widget-menu-widget widget">
+     <header class="navbar site-header container">
+      <div class="wrap-site-logo">
+       <a title="CodeLearn" href="/">
+        <img alt="CodeLearn nền tảng dạy lập trình trực tuyến" class="site-logo"
+         src="codelearn-logo.png">
+       </a>
+      </div>
+      <div class="wrap-right-header">
+       <input type="checkbox" id="mobile-menu-cb" name="mobile-menu-cb">
+       <label class="hamburger-button" for="mobile-menu-cb">
+        <span class="hamburger-icon"></span>
+       </label>
+       <label class="hamburger-menu-mask" for="mobile-menu-cb"></label>
+       <nav class="site-menu">
+        <ul class="menu menu-main-menu">
+         <li>
+          <a href="/learning" title="Học tập">Học tập</a>
+         </li>
+         <li>
+          <a href="/training" title="Luyện tập">Luyện tập</a>
+         </li>
+         <li>
+          <a href="/fights" title="Thi đấu">Thi đấu</a>
+         </li>
+         <li>
+          <a href="/challenge" title="Thử thách">Thử thách</a>
+         </li>
+         <li>
+          <a href="/evaluating" title="Đánh giá">Đánh giá</a>
+         </li>
+         <li>
+          <a href="/discussion" title="Thảo luận">Thảo luận</a>
+         </li>
+         <li>
+          <a href="/leaderboard" title="Xếp hạng">Xếp hạng</a>
+         </li>
+         <li>
+          <a href="/game" title="Trò chơi">Trò chơi</a>
+         </li>
+         <li>
+          <a href="/sharing" title="Chia sẻ">Chia sẻ</a>
+         </li>
+        </ul>
+        <div class="dropdown dropdown-language">
+         <a href="#" class="dropdown-toggle btn-dark btn--language " data-toggle="dropdown" role="button"
+          aria-haspopup="true" aria-expanded="false" title="Tiếng Việt">
+          <img alt="Tiếng Việt" class="button-language btn-img flag" src="vn.png" />
+         </a>
+         <ul class="dropdown-menu">
+          <li>
+           <span class="change-lang" data-link="/language/setLanguageLocal?name=en&redirectUrl=%2f">
+            <img alt="en" class="icon-language" src="en.png">
+            English
+           </span>
+          </li>
+          <li>
+           <span class="change-lang" data-link="/language/setLanguageLocal?name=vn&redirectUrl=%2f">
+            <img alt="vn" class="icon-language" src="vn.png">
+            Tiếng Việt
+           </span>
+          </li>
+         </ul>
+        </div>
+       </nav>
+       <ul class="site-user-menu">
+        <li>
+         <button id="login-header" class="btn btn-login" data-toggle="modal" data-target="#loginModal"
+          onclick="if (!window.__cfRLUnblockHandlers) return false; openModal('login')">Đăng nhập</button>
+         <a href="#frmSignup" class="btn btn-important" title="Đăng ký">Đăng ký</a>
+        </li>
+       </ul>
+      </div>
+     </header>
+    </article>
+   </div>
+  </div>
+
+
+  <section id="top-head" class="landing-section">
+   <div class="container">
+    <div class="row">
+     <div class="col-xs-12 col-lg-8">
+      <div class="wrap-block-head-text">
+       <div class="block-head-text">
+        <h1>Học lập trình<br> từ con số 0</h1>
+        <p>Khởi đầu dễ dàng hơn với CodeLearn</p>
+       </div>
+      </div>
+     </div>
+     <div class="col-xs-12 col-lg-4">
+      <div class="wrap-form-head-register">
+       <div class="form-head-register">
+        <h4 class="title-block">Bắt Đầu Ngay</h4>
+        <form id="frmSignup" method="POST" action="/">
+         <div class="form-group">
+          <input name="username" type="text" class="form-control" placeholder="Tên đăng nhập" autocomplete="username">
+         </div>
+         <div class="form-group">
+          <input name="email" type="email" class="form-control" placeholder="Email" autocomplete="email">
+         </div>
+         <div class="form-group">
+          <input name="password" type="password" class="form-control" placeholder="Mật khẩu"
+           autocomplete="current-password">
+         </div>
+         <div class="form-check">
+          <div class="checkbox-area">
+           <input id="cbAgree" name="cbAgree" type="checkbox" value="1" class="form-check-input"
+            data-error="#blockcbAgree-error">
+           <label class="form-check-label" for="cbAgree">
+            Đồng ý với <a href="/terms" target="_blank">Điều khoản</a> của CodeLearn
+           </label>
+          </div>
+          <div id="blockcbAgree-error"></div>
+         </div>
+         <button type="submit" class="btn btn-default btn-block btn-blue btn-signup">Đăng ký</button>
+        </form>
+        <div class="switch-type-login">hoặc sử dụng tài khoản khác</div>
+        <div class="signin-options">
+         <button class="btn btn-default btn-block btn--microsoft icon-left"
+          onclick="window.location.replace('https://oauth.codelearn.io/Home/SignIn')"
+          title="Tiếp tục tài khoản FSoft qua Microsoft">
+          <i class="fab fa-windows" aria-hidden="true"></i>
+         </button>
+         <button class="btn btn-default btn-block btn--facebook icon-left" onclick="facebookSignIn()"
+          title="Tiếp tục với Facebook">
+          <i class="fab fa-facebook" aria-hidden="true"></i>
+         </button>
+         <button class="btn btn-default btn-block btn--google icon-left btn-google-login" title="Tiếp tục với Google">
+          <i class="fab fa-google-plus-g" aria-hidden="true"></i>
+         </button>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </section>
+
+
+  <div id="logo-partners" class="landing-section">
+   <div class="container">
+    <ul class="carousel">
+     <li><img src="lazy.jpg" data-lazy="logo-fpt.png" alt="Fpt" /></li>
+     <li><img src="lazy.jpg" data-lazy="logo-FUNiX.png" alt="FUNix" /></li>
+     <li><img src="lazy.jpg" data-lazy="logo-polytehnic.png" alt="fpt polytechnic" />
+     </li>
+     <li><img src="lazy.jpg" data-lazy="logo-dhspkthungyen.png" alt="dhspkthungyen" />
+     </li>
+     <li><img src="lazy.jpg" data-lazy="logo-fpt.png" alt="Fpt" /></li>
+     <li><img src="lazy.jpg" data-lazy="logo-FUNiX.png" alt="FUNix" /></li>
+     <li><img src="lazy.jpg" data-lazy="logo-polytehnic.png" alt="fpt polytechnic" />
+     </li>
+     <li><img src="lazy.jpg" data-lazy="logo-dhspkthungyen.png" alt="dhspkthungyen" />
+     </li>
+    </ul>
+   </div>
+  </div>
+
+
+  <section id="key-for-future" class="landing-section">
+   <div class="container">
+    <h2 class="title-section">
+     Lập trình<br>
+     là xu thế của tương lai
+    </h2>
+    <div class="row">
+     <div class="col-xs-12 col-sm-5 col-md-6">
+      <img src="chia-khoa-lap-trinh.png" alt="Lập trình chìa khoá thành công cho tương lai" />
+     </div>
+     <div class="col-xs-12 col-sm-7 col-md-6">
+      <ul class="list-key-features">
+       <li>
+        <div class="heading-key"><img src="phat-trien-tu-duy-sang-tao.png"
+          alt="Học cách viết code giup phát triển tư duy sáng tạo" />
+         <h3>Phát triển tư duy sáng tạo</h3>
+        </div>
+        <p class="key-des">Học cách viết code giúp bạn trau dồi tư duy logic và đưa bạn đến một cấp độ giải quyết vấn đề
+         hoàn toàn mới.</p>
+       </li>
+       <li>
+        <div class="heading-key"><img src="lam-quen-cong-nghe.png"
+          alt="Học lập trình giúp bạn làm quen thế giới công nghệ" />
+         <h3>Làm quen thế giới công nghệ</h3>
+        </div>
+        <p class="key-des">Học lập trình giúp bạn thân thiết hơn với thế giới công nghệ, thích nghi với cuộc sống thời
+         đại 4.0.</p>
+       </li>
+       <li>
+        <div class="heading-key"><img src="mo-rong-co-hoi-nghe-nghiep.png"
+          alt="Mở rộng cơ hội nghề nghiệp lập trình" />
+         <h3>Mở rộng cơ hội nghề nghiệp</h3>
+        </div>
+        <p class="key-des">Công việc lập trình đang tăng nhanh 50% so với thị trường việc làm nói chung với mức lương
+         cao hơn trung bình 30%.</p>
+       </li>
+      </ul>
+     </div>
+    </div>
+   </div>
+  </section>
+
+
+  <section id="our-statistic" class="landing-section">
+   <div class="container">
+    <div class="row">
+     <div class="col-xs-12 col-sm-4">
+      <div class="wrap-statistic-content">
+       <div class="statistic-number">
+        <span class="counter">
+         60000
+        </span> +
+       </div>
+       <h3 class="statistic-title">Học viên đã đăng ký</h3>
+      </div>
+     </div>
+     <div class="col-xs-12 col-sm-4">
+      <div class="wrap-statistic-content">
+       <div class="statistic-number">
+        <span class="counter">
+         10000
+        </span>
+        +
+       </div>
+       <h3 class="statistic-title">Chứng chỉ đã được trao</h3>
+      </div>
+     </div>
+     <div class="col-xs-12 col-sm-4">
+      <div class="wrap-statistic-content">
+       <div class="statistic-number">
+        <span class="counter" data-counter-time="1000">
+         5
+        </span>
+       </div>
+       <h3 class="statistic-title">Quốc gia đã sử dụng</h3>
+      </div>
+     </div>
+     <div class="col-xs-12" style="text-align:center">
+      <a href="/learning" class="btn btn-important" title="Tham gia học lập trình ngay!">Tham gia học lập trình
+       ngay!</a>
+     </div>
+    </div>
+   </div>
+  </section>
+
+
+  <section id="code-step" class="landing-section">
+   <div class="container">
+    <h2 class="title-section">
+     Lộ trình trở thành<br>
+     lập trình viên
+    </h2>
+    <div class="row">
+     <div class="col-xs-12 col-sm-6 col-lg-3">
+      <a href="/learning" title="20+ khóa học lập trình">
+       <div class="wrap-code-step-img">
+        <span class="label-step">1</span>
+        <img src="hoc-lap-trinh.png" alt="Học lập trình cơ bản đến nâng cao" />
+       </div>
+       <h3 class="step-title">Học lập trình</h3>
+       <p class="step-des">Học lập trình cơ bản đến nâng cao thông qua các khóa học.</p>
+      </a>
+     </div>
+     <div class="col-xs-12 col-sm-6 col-lg-3">
+      <a href="/training" title="1000+ bài luyện tập">
+       <div class="wrap-code-step-img">
+        <span class="label-step">2</span>
+        <img src="luyen-lap-trinh.png" alt="Luyện lập trình với hàng nghìn bài tập" />
+       </div>
+       <h3 class="step-title">Luyện lập trình</h3>
+       <p class="step-des">Luyện lập trình hằng ngày với hàng nghìn bài tập lớn nhỏ.</p>
+      </a>
+     </div>
+     <div class="col-xs-12 col-sm-6 col-lg-3">
+      <a href="/fights" title="Thi code hàng tuần">
+       <div class="wrap-code-step-img">
+        <span class="label-step">3</span>
+        <img src="thi-lap-trinh.png" alt="Thi và cải thiện kỹ năng lập trình" />
+       </div>
+       <h3 class="step-title">Thi lập trình</h3>
+       <p class="step-des">Tham gia các cuộc thi và cải thiện kỹ năng lập trình liên tục.</p>
+      </a>
+     </div>
+     <div class="col-xs-12 col-sm-6 col-lg-3">
+      <a href="/sharing" title="Chia sẻ - Xu hướng lập trình">
+       <div class="wrap-code-step-img">
+        <span class="label-step">4</span>
+        <img src="chia-se-lap-trinh.png" alt="Tìm hiểu kiến thức lập trình" />
+       </div>
+       <h3 class="step-title">Tìm hiểu lập trình</h3>
+       <p class="step-des">Tìm hiểu kiến thức lập trình thông qua chia sẻ từ các chuyên gia.</p>
+      </a>
+     </div>
+    </div>
+   </div>
+  </section>
+
+
+  <section id="why-choose-us" class="landing-section">
+   <div class="container">
+    <h2 class="title-section">
+     CodeLearn<br>
+     Ưu điểm vượt trội
+    </h2>
+    <div class="row">
+     <div class="col-xs-12 col-md-7 col-lg-8">
+      <ul class="carousel list-why-choose-us-thumb">
+       <li data-color="#F4EBEB"><img src="he-thong-hoc-code-manh-me.png"
+         alt="Hệ thống đào tạo mạnh mẽ, hiện đại" /></li>
+       <li data-color="#F0F8EC"><img src="lazy.jpg"
+         data-lazy="noi-dung-bai-hoc-de-hieu.png" alt="Nội dung học lập trình dễ hiểu, chi tiết" />
+       </li>
+       <li data-color="#F8F4EB"><img src="lazy.jpg" data-lazy="su-kien-lap-trinh.png"
+         alt="Sự kiện lập trình hấp dẫn, thu hút" /></li>
+       <li data-color="#EDEDF8"><img src="lazy.jpg"
+         data-lazy="cong-dong-lap-trinh.png" alt="Cộng đồng CodeLearn đông đảo, năng động" /></li>
+       <li data-color="#F4E8EF"><img src="lazy.jpg"
+         data-lazy="doi-ngu-ho-tro-codelearn.png" alt="Đội ngũ hỗ trợ nhiệt tình, có chuyên môn" />
+       </li>
+      </ul>
+     </div>
+     <div class="col-xs-12 col-md-5 col-lg-4 wrap-list-why-choose-us-text">
+      <ul class="carousel vertical-layout list-why-choose-us-text">
+       <li>
+        <h4 class="wrap-why-choose-us-item"><img src="lazy.jpg"
+          data-lazy="icon-code.png" alt="Hệ thống mạnh mẽ, hiện đại" /><span>Hệ thống mạnh mẽ, hiện
+          đại</span></h4>
+       </li>
+       <li>
+        <h4 class="wrap-why-choose-us-item"><img src="lazy.jpg"
+          data-lazy="icon-hoc.png" alt="Nội dung dễ hiểu, chi tiết" /><span>Nội dung dễ hiểu, chi
+          tiết</span></h4>
+       </li>
+       <li>
+        <h4 class="wrap-why-choose-us-item"><img src="lazy.jpg"
+          data-lazy="icon-chung-nhan.png" alt="Sự kiện hấp dẫn, thu hút" /><span>Sự kiện hấp dẫn, thu
+          hút</span></h4>
+       </li>
+       <li>
+        <h4 class="wrap-why-choose-us-item"><img src="lazy.jpg"
+          data-lazy="icon-cong-dong.png" alt="Cộng đồng đông đảo, năng động" /><span>Cộng đồng đông
+          đảo, năng động</span></h4>
+       </li>
+       <li>
+        <h4 class="wrap-why-choose-us-item"><img src="lazy.jpg"
+          data-lazy="icon-doi-ngu-codelearn.png" alt="Đội ngũ nhiệt tình, có chuyên môn" /><span>Đội
+          ngũ nhiệt tình, có chuyên môn</span></h4>
+       </li>
+      </ul>
+     </div>
+    </div>
+   </div>
+  </section>
+
+
+  <section id="our-rewards" class="landing-section">
+   <div class="container">
+    <div class="row">
+     <div class="col-xs-12 col-md-7 wrap-our-reward-content">
+      <div class="our-reward-content">
+       <h2 class="title-section">
+        <a href="/aboutus" title="Niềm tự hào của chúng tôi">Niềm tự hào của chúng tôi</a>
+       </h2>
+       <h5>CodeLearn phát triển một hệ sinh thái toàn diện với các khóa học, bài tập thực hành phù hợp, hỗ trợ đa ngôn
+        ngữ. Kết nối những người có chung niềm đam mê với lập trình để cùng nhau xây dựng một cộng đồng lớn mạnh.</h5>
+      </div>
+     </div>
+     <div class="col-xs-12 col-md-5">
+      <a href="/aboutus" title="Niềm tự hào của chúng tôi"><img src="chung-tri-codelearn.png"
+        alt="Niềm tự hào của chúng tôi" /></a>
+     </div>
+    </div>
+   </div>
+  </section>
+
+
+  <section id="testimonials" class="landing-section">
+   <h2 class="title-section">
+    Học viên nói gì về CodeLearn?
+   </h2>
+   <ul class="testimonial-carousel carousel">
+    <li class="carousel-item">
+     <img alt="Lập trình viên - Nguyen Danh Quang" class="avatar-user" src="lazy.jpg"
+      data-lazy="dangquang.jpg" />
+     <div class="wrap-content-testiomonial">
+      <h4 class="user-name">Nguyễn Đăng Quang</h4>
+      <span class="user-des">Lập trình viên</span>
+      <p class="testiomonial">“Em hoàn toàn không biết mình nên bắt đầu từ đâu khi bắt đầu học lập trình từ con số 0.
+       CodeLearn đã giúp em vạch rõ lộ trình, khiến việc học của em dễ dàng hơn rất nhiều.“</p>
+     </div>
+    </li>
+    <li class="carousel-item">
+     <img alt="Học viên Gia Minh" class="avatar-user" src="lazy.jpg"
+      data-lazy="giaminh.png" />
+     <div class="wrap-content-testiomonial">
+      <h4 class="user-name">Gia Minh</h4>
+      <span class="user-des">Học sinh - 11 tuổi</span>
+      <p class="testiomonial">“Cháu rất thích học tại CodeLearn. Không chỉ có nhiều khóa học phù hợp với cháu, các bài
+       tập cũng đa dạng, phần bài giải mẫu cũng rất chi tiết. Cháu cảm thấy mình đã tiến bộ rất nhiều và mong muốn trong
+       tương lai có thể trở thành một lập trình viên giỏi!“</p>
+     </div>
+    </li>
+    <li class="carousel-item">
+     <img alt="Lập trình viên - Vu Hoang Bao Trung" class="avatar-user" src="lazy.jpg"
+      data-lazy="trungvu.jpg" />
+     <div class="wrap-content-testiomonial">
+      <h4 class="user-name">Vũ Hoàng Bảo Trung</h4>
+      <span class="user-des">Lập trình viên</span>
+      <p class="testiomonial">“CodeLearn đã giúp tôi học code hiệu quả hơn. Bên cạnh các khóa học và bài tập phù hợp,
+       CodeLearn còn xây dựng một cộng đồng những người học lập trình để chúng tôi có thể cùng học, cùng tiến bộ.“</p>
+     </div>
+    </li>
+   </ul>
+  </section>
+
+
+  <section id="footer-banner" class="landing-section">
+   <div class="container">
+    <h2 class="title-section">KHƠI DẬY ĐAM MÊ <span style="color:#FAD93C">LẬP TRÌNH</span>!</h2>
+    <h4>Đăng ký tài khoản và tham gia ngay hôm nay!</h4>
+    <a class="btn btn-important" href="#frmSignup" title="Bắt đầu ngay!">Bắt đầu ngay!</a>
+   </div>
+  </section>
+
+  <footer id="footer" class="codecamp-footer">
+   <div class=" main-footer">
+    <div class="container">
+     <div class="row">
+      <div class="col-md-6 introduction footer-column">
+       <div class="logo-codelearn">
+        <img src="codelearn-logo.svg" alt="CodeLearn" />
+       </div>
+       <p>
+        CodeLearn là nền tảng tương tác trực tuyến hỗ trợ người dùng học tập, thực hành, thi đấu và đánh giá kỹ năng lập
+        trình một cách nhanh chóng và chính xác.
+       </p>
+       <a href="https://www.facebook.com/CodeLearnFanpage" title="Facebook" target="_blank" class="social-button">
+        <i class="fab fa-facebook-f"></i>
+       </a>
+       <a href="https://www.youtube.com/channel/UCpt3dSDGk5fC7uU9OeFG5ig" title="Youtube" target="_blank"
+        class="social-button">
+        <i class="cl-icon-youtube"></i>
+       </a>
+       <a href="https://twitter.com/codelearn_io" title="Twitter" target="_blank" class="social-button">
+        <i class="cl-icon-twitter-full"></i>
+       </a>
+       <a href="https://www.instagram.com/codelearn.io/" title="Instagram" target="_blank" class="social-button">
+        <i class="cl-icon-instagram"></i>
+       </a>
+      </div>
+      <div class="col-xs-12 col-sm-4 col-md-2 links footer-column">
+       <h4>Liên kết</h4>
+       <p><a href="/learning" class="link-menu" title="Học tập">Học tập</a></p>
+       <p><a href="/training" class="link-menu" title="Luyện tập">Luyện tập</a></p>
+       <p><a href="/fights" class="link-menu" title="Cuộc thi">Cuộc thi</a></p>
+       <p><a href="/game/index" class="link-menu" title="Trò chơi">Trò chơi</a></p>
+      </div>
+      <div class="col-xs-12 col-sm-4 col-md-2 about footer-column">
+       <h4>Thông tin</h4>
+       <p><a href="/sharing" class="link-menu" title="Chia sẻ">Chia sẻ</a></p>
+       <p><a href="/aboutus" title="Về chúng tôi">Về chúng tôi</a></p>
+       <p><a href="/terms" title="Điều khoản sử dụng">Điều khoản sử dụng</a></p>
+      </div>
+      <div class="col-xs-12 col-sm-4 col-md-2 help footer-column">
+       <h4>Trợ giúp</h4>
+       <p><a href="/help" title="Hỗ trợ">Hỗ trợ</a></p>
+       <p><a href="/discussion" title="Thảo luận">Thảo luận</a></p>
+       <p><a href="/cdn-cgi/l/email-protection#e99a9c9999869b9da98a868d8c858c889b87c78086"
+         title="Liên hệ với chúng tôi">Liên hệ với chúng tôi</a></p>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="col-xs-12 right-reserved">
+    <span class="powerby">
+     <img src="logo-fpt-footer.svg" alt="FPT Software" class="fpt-logo">
+     Cung cấp bởi <a href="/">CodeLearn</a>
+    </span>
+    <span class="copyright">&#169; 2020.</span>
+    <span>Đã đăng ký bản quyền rev 12/13/2020 9:14:05 PM</span>
+   </div>
+  </footer>
+  <script data-cfasync="false" src="email.js"></script>
+  <script>
+   $(document).ready(function () {
+    $('.btn-google-login').on('click', function () { $('#googleSignIn').trigger('click') })
+    $('#loginModal').find('#login').addClass('active');
+    $('#loginModal').find('#signup').remove();
+    $('#loginModal').find('.nav-tabs').remove();
+    $('.btn-google-login').on('click', function () {
+     $('#googleSignIn').trigger('click');
+    });
+    $('.btn[href="#frmSignup"]').click(function (e) {
+     e.preventDefault();
+     $([document.documentElement, document.body]).animate({
+      scrollTop: $("#top-head .wrap-form-head-register").offset().top - 100
+     }, 1000);
+    });
+
+    $(window).load(function () {
+     $('.counter').countUp();
+    });
+    //partner logo
+    $('#logo-partners .carousel').slick({
+     dots: false,
+     arrows: false,
+     infinite: false,
+     lazyLoad: 'ondemand',
+     speed: 300,
+     slidesToShow: 8,
+     slidesToScroll: 1,
+     autoplay: true,
+     autoplaySpeed: 2000,
+     responsive: [
+      {
+       breakpoint: 1500,
+       settings: {
+        slidesToShow: 6,
+        slidesToScroll: 1,
+       }
+      }, {
+       breakpoint: 1024,
+       settings: {
+        slidesToShow: 4,
+        slidesToScroll: 1,
+       }
+      },
+      {
+       breakpoint: 600,
+       settings: {
+        slidesToShow: 2,
+        slidesToScroll: 1
+       }
+      }
+     ]
+    });
+    //why choose us
+    $('.list-why-choose-us-thumb.carousel').slick({
+     dots: false,
+     lazyLoad: 'ondemand',
+     arrows: false,
+     infinite: true,
+     speed: 300,
+     slidesToShow: 1,
+     slidesToScroll: 1,
+     autoplay: true,
+     fade: true,
+     autoplaySpeed: 3000,
+     asNavFor: '.list-why-choose-us-text.carousel',
+    });
+    var window_width = '';
+    $(window).resize(function () {
+     if (window_width != $(window).width()) {
+      window_width = $(window).width();
+      setTimeout(function () {
+       $('.list-why-choose-us-text.carousel.slick-slider').slick('unslick');
+       if ($(window).width() > 992) {
+        $('.list-why-choose-us-text.carousel').slick({
+         dots: false,
+         arrows: false,
+         infinite: false,
+         vertical: true,
+         speed: 300,
+         slidesToShow: 5,
+         slidesToScroll: 5,
+         asNavFor: '.list-why-choose-us-thumb.carousel',
+         autoplay: true,
+         autoplaySpeed: 3000,
+         focusOnSelect: true,
+         lazyLoad: 'ondemand',
+        });
+       } else {
+        $('.list-why-choose-us-text.carousel').slick({
+         dots: false,
+         arrows: false,
+         infinite: false,
+         speed: 300,
+         slidesToShow: 2,
+         slidesToScroll: 1,
+         asNavFor: '.list-why-choose-us-thumb.carousel',
+         autoplay: true,
+         autoplaySpeed: 3000,
+         focusOnSelect: true,
+         lazyLoad: 'ondemand',
+         responsive: [{
+          breakpoint: 556,
+          settings: {
+           slidesToShow: 1,
+           slidesToScroll: 1,
+          }
+         }
+         ]
+        });
+       }
+      }, 100)
+     }
+    }).resize();
+    $('.list-why-choose-us-thumb.carousel').on('afterChange', function (event, slick, currentSlide) {
+     $('#why-choose-us').css('background-color', $(slick.$slides.get(currentSlide)).data('color'));
+    });
+    //testimonial
+    $('.testimonial-carousel.carousel').slick({
+     dots: true,
+     arrows: false,
+     infinite: true,
+     speed: 300,
+     slidesToShow: 1,
+     slidesToScroll: 1,
+     autoplay: true,
+     autoplaySpeed: 5000,
+     centerMode: true,
+     centerPadding: '28vw',
+     lazyLoad: 'ondemand',
+     responsive: [
+      {
+       breakpoint: 1500,
+       settings: {
+        centerPadding: '20vw',
+       }
+      }, {
+       breakpoint: 1200,
+       settings: {
+        centerPadding: '15vw',
+       }
+      }, {
+       breakpoint: 556,
+       settings: {
+        centerPadding: '15px',
+       }
+      }
+     ]
+    });
+   });
+  </script>
+  <article class="widget-content widget-home-widget widget">
+  </article>
+ </div>
+ <script src="slick.js" type="text/javascript"></script>
+ <script src="countUp.js" type="text/javascript"></script>
+ <script src="countUp2.js" type="text/javascript"></script>
+
+ <div id="fb-root"></div>
+
+ <div class="modal fade modal-center" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModal">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+   <div class="modal-content">
+    <div class="modal-body login-modal">
+     <div>
+
+      <ul class="nav nav-tabs nav-fill" role="tablist">
+       <li role="presentation" class="nav-item">
+        <a class="nav-link" data-target="#login" aria-controls="login" role="tab" data-toggle="tab"
+         onclick="openModal('login')">Đăng nhập</a>
+       </li>
+      </ul>
+
+      <div class="tab-content">
+       <h4 class="header-card">Đăng nhập bằng tài khoản</h4>
+       <div class="signin-options">
+        <button class="btn btn-default btn-block btn--microsoft icon-left"
+         onclick="window.location.replace('https://oauth.codelearn.io/Home/SignIn')"
+         title="Đăng nhập tài khoản FSoft qua Microsoft">
+         <i class="fab fa-windows" aria-hidden="true"></i>
+         <span>Microsoft</span>
+        </button>
+        <button class="btn btn-default btn-block btn--facebook icon-left" onclick="facebookSignIn()">
+         <i class="fab fa-facebook-f" aria-hidden="true"></i>
+         <span>Facebook</span>
+        </button>
+        <button class="btn btn-default btn-block btn--google icon-left" id="googleSignIn" data-onsuccess="onSignIn">
+         <i class="fab fa-google-plus-g" aria-hidden="true"></i>
+         <span>Google</span>
+        </button>
+       </div>
+       
+       <p class="label-or text-center">HOẶC</p>
+       <div role="tabpanel" class="tab-pane active" id="login">
+        <form id="frmLogin">
+         <div class="form-group">
+          <input name="username" type="text" class="form-control" placeholder="Tên đăng nhập" autocomplete='username' />
+          <a href="/resend-email" title="Gửi lại thư kích hoạt" class="resend-email hidden">Gửi lại thư kích hoạt</a>
+         </div>
+         <div class="form-group" style="margin-bottom: 30px;">
+          <input name="password" type="password" class="form-control" placeholder="Vui lòng nhập mật khẩu"
+           autocomplete='current-password' />
+         </div>
+         <div class="form-button">
+          <button type="submit" class="btn btn-default btn-block btn-blue btn-login">Đăng nhập</button>
+         </div>
+         <div class="col-md-12 registered-forgot" role="tablist">
+          <div class="col-md-6 text-left">
+          </div>
+          <div class="col-md-6 text-right">
+           <a href="/forgot-password">Quên mật khẩu</a>
+          </div>
+         </div>
+         <div class="col-md-12 terms-of-use">
+          Trang này được bảo vệ bởi reCAPTCHA và áp dụng <a href="/terms" target="_blank">Điều khoản sử dụng</a>.
+         </div>
+        </form>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+ </div>
+ <script>
+
+  var siteKey = '6LcMTLMUAAAAAFLLyTIvjCj7k0bAG8ZqjnaTTrQE';
+ </script>
+
+
+ 
+ <script>
+  function onSignIn(googleUser) {
+   var id_token = googleUser.getAuthResponse().id_token;
+   var xhr = new XMLHttpRequest();
+   xhr.open('POST', '/login');
+   xhr.setRequestHeader('Content-Type', 'application/json');
+   xhr.onload = function () {
+    console.log('message', xhr.responseText);
+    if (xhr.responseText === 'success') {
+     signOut();
+     location.assign('/dashboard');
+    }
+   };
+   xhr.send(JSON.stringify({ token: id_token }));
+  }
+ </script>
+ 
+ 
+ <script>
+  function signOut() {
+   var auth2 = gapi.auth2.getAuthInstance();
+   auth2.signOut().then(function () {
+    console.log('User signed out.');
+   });
+  }
+ </script>
+
+ <script>
+  var googleUser = {};
+  var startApp = function () {
+   gapi.load('auth2', function () {
+    auth2 = gapi.auth2.init({
+     client_id: '391622478031-db4vurbbm546jpb0446dpgnmaodppi6f.apps.googleusercontent.com',
+     cookiepolicy: 'localhost:3000',
+    });
+    attachSignin(document.getElementById('googleSignIn'));
+   });
+  };
+
+  function attachSignin(element) {
+   auth2.attachClickHandler(element, {},
+    function (googleUser) {
+     onSignIn(googleUser);
+    }, function (error) {
+     
+    });
+  }
+ </script>
+<script>startApp();</script>
+ 
+</body>
+
+</html>

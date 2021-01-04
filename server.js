@@ -291,6 +291,10 @@ app.post('/addFriend', (req, res) => {
 
 // socketio
 io.on('connection', socket => {
+
+    socket.on('test', data => {
+        updateUsernames();
+    })
  
  socket.on('login', data => {
         let userOnline = JSON.parse(data.users);    
@@ -361,7 +365,7 @@ io.on('connection', socket => {
     socket.on('message', data => {
         let userSendMessage = JSON.parse(data.user);
         let userChatTo = data.userChatTo;
-        console.log(data);
+        console.log('userSendMessage' + userSendMessage);
         let message = data.message;
         let timeSend = data.timeSend;
            

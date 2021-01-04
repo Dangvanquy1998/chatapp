@@ -5,125 +5,15 @@
  <meta charset="utf-8" />
  <meta name="description"
   content="Học lập trình trở nên đơn giản và thú vị hơn bao giờ hết. Bạn sẽ trở thành một lập trình viên tài năng thông qua quá trình học tập và luyện tập mỗi ngày." />
- <meta name="author" content="CodeLearn" />
- <link rel="canonical" href="/" />
- <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,user-scalable=0" />
  <title>Học lập trình dễ dàng bắt đầu cùng CodeLearn</title>
 
- <meta property="og:title" content="Học lập trình dễ dàng bắt đầu cùng CodeLearn" />
- <meta property="og:type" content="website" />
- <meta property="og:url" content="https://codelearn.io/" />
- <meta property="og:description"
-  content="Học lập trình trở nên đơn giản và thú vị hơn bao giờ hết. Bạn sẽ trở thành một lập trình viên tài năng thông qua quá trình học tập và luyện tập mỗi ngày." />
- <meta property="og:image" content="codelearn-share.jpg" />
- <meta property="fb:app_id" content="648326032295473" />
+ 
 
-
- <meta name="twitter:card" content="summary">
- <meta name="twitter:url" content="https://codelearn.io/">
- <meta name="twitter:title" content="Học lập trình dễ dàng bắt đầu cùng CodeLearn">
- <meta name="twitter:description"
-  content="Học lập trình trở nên đơn giản và thú vị hơn bao giờ hết. Bạn sẽ trở thành một lập trình viên tài năng thông qua quá trình học tập và luyện tập mỗi ngày.">
- <meta name="twitter:image" content="content/codelearn-share.jpg" />
- <meta name="twitter:site" content="@Codelearn.io">
- <meta name="twitter:creator" content="@Codelearn.io">
-
- <meta name="google-signin-client_id"
-  content="16523143533-ovv9lj8c7i8sv36sv3lguom0msmdk8ah.apps.googleusercontent.com" />
+ 
 <script src="https://apis.google.com/js/platform.js" async defer></script>
 <meta name="google-signin-client_id" content="391622478031-db4vurbbm546jpb0446dpgnmaodppi6f.apps.googleusercontent.com">
  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-141685371-1"></script>
- <script>
-  var isGetNotification = true;
-  var isNotCountComment = false;
-
-  var s3Storage = '';
-  var resourcePath = '/Resources';
-  var strAuthen = '';
-  var faceId = '648326032295473';
-  var isLoadedFacebook = 'False';
-  if (strAuthen == '') {
-   var googleId = '16523143533-ovv9lj8c7i8sv36sv3lguom0msmdk8ah.apps.googleusercontent.com';
-  }
-
-  if (strAuthen == '') {
-   var LOGIN_VALIDATOR, SIGNUP_VALIDATOR;
-   function openModal(tab) {
-
-    $('#loginModal a[data-target="#' + tab + '"]').tab('show');
-    switch (tab) {
-     case 'login':
-      $(".btn--facebook").attr('title', 'Đăng nhập bằng Facebook');
-      $(".btn--google").attr('title', 'Đăng nhập bằng Google');
-      $("#loginModal .header-card").text('Đăng nhập tài khoản của bạn');
-      SIGNUP_VALIDATOR && SIGNUP_VALIDATOR.resetForm();
-      break;
-     case 'signup':
-      $(".btn--facebook").attr('title', 'Tiếp tục với Facebook');
-      $(".btn--google").attr('title', 'Tiếp tục với Google');
-      $("#loginModal .header-card").text('Đăng ký tài khoản mới');
-      LOGIN_VALIDATOR && LOGIN_VALIDATOR.resetForm();
-      break;
-    }
-   }
-  }
-
-  if ('https://codelearn.io' == location.origin.toLocaleLowerCase()) {
-   window.dataLayer = window.dataLayer || [];
-   function gtag() { dataLayer.push(arguments); }
-
-   gtag('js', new Date());
-   gtag('config', 'UA-141685371-1');
-   gtag('config', 'USER_MANAGEMENT');
-   gtag('set', { 'user_id': 'CodeLearn-Anonymous' });
-
-   // Measure Google Ads conversions
-   gtag('event', 'conversion', {
-    'send_to': 'USER_MANAGEMENT/CodeLearn-Anonymous',
-   });
-
-   window['GoogleAnalyticsObject'] = 'ga';
-   window['ga'] = window['ga'] || function () {
-    (window['ga'].q = window['ga'].q || []).push(arguments)
-   };
-   ga('set', 'userId', 'CodeLearn-Anonymous');
-  }
-
-  window.fbAsyncInit = function () {
-   FB.init({
-    appId: faceId,
-    xfbml: true,
-    version: 'v7.0'
-   });
-   FB.AppEvents.logPageView();
-   isLoadedFacebook = true;
-  };
-
-  (function (d, s, id) {
-   var js, fjs = d.getElementsByTagName(s)[0];
-   if (d.getElementById(id)) { return; }
-   js = d.createElement(s); js.id = id;
-   js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
-   fjs.parentNode.insertBefore(js, fjs);
-  }(document, 'script', 'facebook-jssdk'));
-
- </script>
-
- <script>
-  !function (f, b, e, v, n, t, s) {
-   if (f.fbq) return; n = f.fbq = function () {
-    n.callMethod ?
-     n.callMethod.apply(n, arguments) : n.queue.push(arguments)
-   };
-   if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
-   n.queue = []; t = b.createElement(e); t.async = !0;
-   t.src = v; s = b.getElementsByTagName(e)[0];
-   s.parentNode.insertBefore(t, s)
-  }(window, document, 'script',
-   'https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', '700313553710795');
-  fbq('track', 'PageView');
- </script>
+ 
 
  <link href="style.css" rel="stylesheet" type="text/css" />
  <link href="skin.css" rel="stylesheet" type="text/css" />
@@ -149,21 +39,9 @@
 </head>
 
 <body class="hold-transition site-body skin-sku-light layout-top-nav  ">
- <script>
-  //<![CDATA[
-  var LANG_CURRENT = "vn";
-  const CurrentUserId = 0;
-  const NOTTIFY_USER_ACCESSKEY = 'nottifyAccessKey';
-  const IS_ADMIN = false;
 
-  PKLService.init({ strVersion: '798184607', strLangCode: 'vn', IsHasLogin: false, url: location.origin });
-        //]]>
- </script>
  <div class="zone zone-content">
-  <script>
-   /**shinsenter/defer.js*/
-   !function (e, o, t, n, i, r) { function c(e, t) { r ? n(e, t || 32) : i.push(e, t) } function f(e, t, n, i) { return t && o.getElementById(t) || (i = o.createElement(e || 'SCRIPT'), t && (i.id = t), n && (i.onload = n), o.head.appendChild(i)), i || {} } r = /p/.test(o.readyState), e.addEventListener('on' + t in e ? t : 'load', function () { for (r = 1; i[0];)c(i.shift(), i.shift()) }), c._ = f, e.defer = c, e.deferscript = function (e, t, n, i) { c(function () { f('', t, i).src = e }, n) } }(this, document, 'pageshow', setTimeout, []), function (s, n) { var a = 'IntersectionObserver', d = 'src', l = 'lazied', h = 'data-', m = h + l, y = 'load', p = 'forEach', b = 'getAttribute', g = 'setAttribute', v = Function(), I = s.defer || v, c = I._ || v; function A(e, t) { return [].slice.call((t || n).querySelectorAll(e)) } function e(u) { return function (e, t, o, r, c, f) { I(function (n, t) { function i(n) { !1 !== (r || v).call(n, n) && ((f || ['srcset', d, 'style'])[p](function (e, t) { (t = n[b](h + e)) && n[g](e, t) }), A('SOURCE', n)[p](i), y in n && n[y]()), n.className += ' ' + (o || l) } t = a in s ? (n = new s[a](function (e) { e[p](function (e, t) { e.isIntersecting && (t = e.target) && (n.unobserve(t), i(t)) }) }, c)).observe.bind(n) : i, A(e || u + '[' + h + d + ']:not([' + m + '])')[p](function (e) { e[b](m) || (e[g](m, u), t(e)) }) }, t) } } function t() { I(function (t, n, i, o, r) { t = A((i = '[type=deferjs]') + ':not(' + (o = '[async]') + ')').concat(A(i + o)), function e() { if (0 != t) { for (o in (i = t.shift()).parentNode.removeChild(i), i.removeAttribute('type'), n = c(i.nodeName), i) 'string' == typeof (r = i[o]) && n[o] != r && (n[o] = r); n[d] && !n.hasAttribute('async') ? n.onload = n.onerror = e : I(e, .1) } }() }, 4) } t(), s.deferstyle = function (t, n, e, i) { I(function (e) { (e = c('LINK', n, i)).rel = 'stylesheet', e.href = t }, e) }, s.deferimg = e('IMG'), s.deferiframe = e('IFRAME'), I.all = t }(this, document);
-  </script>
+  
 
   <div id="layout-navigation" class="group landing-header">
    <div class="zone zone-navigation">

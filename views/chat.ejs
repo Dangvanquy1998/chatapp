@@ -3,38 +3,13 @@
 
 <head>
  <meta charset="utf-8" />
- <meta name="description"
-  content="Học lập trình trở nên đơn giản và thú vị hơn bao giờ hết. Bạn sẽ trở thành một lập trình viên tài năng thông qua quá trình học tập và luyện tập mỗi ngày." />
- <meta name="author" content="CodeLearn" />
- <link rel="shortcut icon" href="content/codelearn-icon.png" />
- <link rel="apple-touch-icon" href="content/codelearn-icon.png" />
- <link rel="canonical" href="/home" />
- <link rel="alternate" hreflang="vi" href="https://codelearn.io/home" />
- <link rel="alternate" hreflang="en-US" href="https://codelearn.io/home" />
- <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,user-scalable=0" />
+
  <title>Lập trình mỗi ngày để trở thành lập trình viên ưu tú</title>
 
- <meta property="og:title" content="Lập trình mỗi ngày để trở thành lập trình viên ưu tú" />
- <meta property="og:type" content="website" />
- <meta property="og:url" content="https://codelearn.io/home" />
- <meta property="og:description"
-  content="Học lập trình trở nên đơn giản và thú vị hơn bao giờ hết. Bạn sẽ trở thành một lập trình viên tài năng thông qua quá trình học tập và luyện tập mỗi ngày." />
- <meta property="og:image" content="content/codelearn-share.jpg" />
- <meta property="fb:app_id" content="648326032295473" />
+ 
 
-
- <meta name="twitter:card" content="summary">
- <meta name="twitter:url" content="https://codelearn.io/home">
- <meta name="twitter:title" content="Lập trình mỗi ngày để trở thành lập trình viên ưu tú">
- <meta name="twitter:description"
-  content="Học lập trình trở nên đơn giản và thú vị hơn bao giờ hết. Bạn sẽ trở thành một lập trình viên tài năng thông qua quá trình học tập và luyện tập mỗi ngày.">
- <meta name="twitter:image" content="content/codelearn-share.jpg" />
- <meta name="twitter:site" content="@Codelearn.io">
- <meta name="twitter:creator" content="@Codelearn.io">
-
- <meta name="google-signin-client_id"
-  content="16523143533-ovv9lj8c7i8sv36sv3lguom0msmdk8ah.apps.googleusercontent.com" />
-
+ <script src="https://apis.google.com/js/platform.js" async defer></script>
+<meta name="google-signin-client_id" content="391622478031-db4vurbbm546jpb0446dpgnmaodppi6f.apps.googleusercontent.com">
  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-141685371-1"></script>
  
 
@@ -487,9 +462,9 @@
        console.log(data);
        var line = "";
        
-       document.getElementById('msg_card_body').innerHTML = line;
-       var objDiv = document.getElementById('msg_card_body');
-       objDiv.scrollTop = objDiv.scrollHeight;
+      //  document.getElementById('msg_card_body').innerHTML = line;
+      //  var objDiv = document.getElementById('msg_card_body');
+      //  objDiv.scrollTop = objDiv.scrollHeight;
        let userCurrent = JSON.parse(user);
 
       //  for (let i = 0; i < data.listMessage.length; i++) {
@@ -499,6 +474,7 @@
       //  }
 
        listMyMessage = data.listMessage;
+       
 
        listMyMessage.forEach(element => {
         if (userCurrent.id === element.id) {
@@ -522,10 +498,18 @@
         }
         
        })
+
+       listMyMessage.forEach(element => {
+        if (userCurrent.id === element.id || userCurrent.id === element.userIdTo) {
+        document.getElementById('msg_card_body').innerHTML = line;
+      var objDiv = document.getElementById('msg_card_body');
+      objDiv.scrollTop = objDiv.scrollHeight;   
+       }
+       })
+
        
-       document.getElementById('msg_card_body').innerHTML = line;
-       var objDiv = document.getElementById('msg_card_body');
-objDiv.scrollTop = objDiv.scrollHeight;
+       
+      
      })
       
   

@@ -4,7 +4,7 @@ var Schema = mongoose.Schema;
 const MessageSchema = new Schema({
  id: String,
  username: String,
- picture: String,
+ avatar: String,
  message: String,
  userIdTo: String,
  timeSend: Date

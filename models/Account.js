@@ -11,7 +11,12 @@ const AccountSchema = new Schema({
  isPassword: String,
  loginType: String,
  googlePlusId: String,
- facebookId: String
+ facebookId: String,
+ friends: [
+  {
+   idFriend: String
+  }
+ ]
 });
 
 module.exports = mongoose.model('Account', AccountSchema);

@@ -26,6 +26,15 @@ app.use(express.static(path.join(__dirname, 'public/Resources/js')));
 app.use(express.static(path.join(__dirname, 'public/Resources/Images')));
 app.use(express.static(path.join(__dirname, 'public/Resources/font')));
 
+//body-parse
+var bodyParser = require('body-parser');
+
+// parse application/json 
+app.use(bodyParser.json());
+
+// parse application/x-www-form-urlencoded 
+app.use(bodyParser.urlencoded({ extended: false }));
+
 // moment
 const moment = require('moment');
 
@@ -74,6 +83,7 @@ app.post('/login', (req, res) => {
       avatar: payload.picture,
       isPassword: 'N',
       googlePlusId: payload.sub,
+      id: payload.sub,
       loginType: 'google'
   })
   Account
@@ -134,7 +144,7 @@ function checkAuthenticated(req, res, next){
         const payload = ticket.getPayload();
         user.name = payload.name;
         user.email = payload.email;
-        user.picture = payload.picture;
+        user.avatar = payload.picture;
         user.id = payload.sub;
       }
       verify()
@@ -154,7 +164,12 @@ let listMessage = [];
 
 app.get('/chat', checkAuthenticated, (req, res) => {
     user = req.user;
-    res.render('chat', {users: JSON.stringify(users), user: user});
+
+    Account.findOne({googlePlusId: user.id}).exec((err, account) => {
+        res.render('chat', {users: JSON.stringify(users), user: account, message: messageAddFriend});
+    })
+
+    
 })
 
 app.get('/api/findAllAccounts', (req, res) => {
@@ -164,6 +179,108 @@ app.get('/api/findAllAccounts', (req, res) => {
     })
 
     res.json(Account);
+})
+
+let accountResult = [];
+let isFriend = false;
+let listFriend = [];
+app.post('/searchByEmail', checkAuthenticated, (req, res) => {
+    
+    let user = req.user;
+    
+    var email = req.body.emailSearch;
+
+    listFriend = [];
+    
+     
+
+    
+
+    Account.findOne({email: email}).exec(function(err, account) {
+        if (account) {
+            accountResult = [];        
+            accountResult = account;
+            console.log('co tim thay');
+            
+
+        } else {
+            accountResult = [];
+        }
+        
+    })
+
+
+    Account.findOne({googlePlusId: user.id}).exec(function(err, account) {
+        if (account) {
+            listFriend = account.friends;
+            
+            console.log('list friends : ' + listFriend);
+
+            if (listFriend.length > 0) {
+                for(let i= 0;i<listFriend.length;i++){
+                if(listFriend[i].idFriend === accountResult.googlePlusId){
+                    isFriend = true;
+                    break; 
+                }   
+                }
+            } else {
+                isFriend = false;
+            }
+            
+        }
+
+        res.redirect('/resultFindUser');
+    })
+
+    
+})
+
+app.get('/resultFindUser', checkAuthenticated, (req, res) => {
+    user = req.user;
+    
+    
+    res.render('resultFindUser', {users: JSON.stringify(users), accountResult: accountResult, isFriend : isFriend});
+})
+
+let messageAddFriend = '';
+app.post('/addFriend', (req, res) => {
+    var idFriend = req.body.idFriend;
+    var idOwner = req.body.idOwner;
+    
+    
+
+    Account.findOne({googlePlusId: idOwner}).exec(function(err, account) {
+        if (account) {
+            
+            let listFriend = account.friends;
+            listFriend.push({idFriend: idFriend});
+
+            Account.findOneAndUpdate({googlePlusId: idOwner}, {$set:{friends: listFriend}}).exec(function(err, account) {
+                
+            });
+        } else {
+            
+        }
+        
+    })
+
+    Account.findOne({googlePlusId: idFriend}).exec(function(err, accountFriend) {
+        if (accountFriend) {
+            
+            let listFriend = accountFriend.friends;
+            listFriend.push({idFriend: idOwner});
+
+            Account.findOneAndUpdate({googlePlusId: idFriend}, {$set:{friends: listFriend}}).exec(function(err, accountFriend) {
+            messageAddFriend = 'Thêm bạn thành công';
+            });
+        } else {
+            
+        }
+        res.redirect('/chat');
+    })
+
+    
+
 })
 
 
@@ -180,14 +297,18 @@ io.on('connection', socket => {
         let id = userOnline.id;
         socket.id = userOnline.id;
         socket.username = userOnline.name;
-        socket.picture = userOnline.picture;
+        socket.avatar = userOnline.avatar;
 
-        console.log('socket id' + socket.id);
-        
         if (!checkUserOnlineExist(id, users)) {
-            users.push({id, username: socket.username, picture: socket.picture});
-            updateUsernames();    
+            users.push({id, username: socket.username, avatar: socket.avatar});
+                updateUsernames();
+            
+        
         }
+
+        
+        
+        
 
  })
 
@@ -248,18 +369,18 @@ io.on('connection', socket => {
         let id = userSendMessage.id;
         socket.id = userSendMessage.id;
         socket.username = userSendMessage.name;
-        socket.picture = userSendMessage.picture;
+        socket.avatar = userSendMessage.avatar;
 
         let Message1 = new Message({
             id: id,
             username: socket.username,
-            picture: socket.picture,
+            avatar: socket.avatar,
             message: message,
             userIdTo: userChatTo.id,
             timeSend: timeSend
         })
 
-        listMessage.push({id, username: socket.username, picture: socket.picture, message: message, userIdTo: userChatTo.id, timeSend: timeSend});
+        listMessage.push({id, username: socket.username, avatar: socket.avatar, message: message, userIdTo: userChatTo.id, timeSend: timeSend});
         updateMessage();
         
         Message1.save(function(err) {

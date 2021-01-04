@@ -121,16 +121,28 @@
   </div>
  </div>
  <div class="container-fluid h-100">
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+  <strong>Holy guacamole!</strong> You should check in on some of those fields below.
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+
+  
 <div class="row justify-content-center h-100" style="height: 100vh;">
  <div class="col-md-4 col-xl-4 chat">
   <div class="card mb-sm-3 mb-md-0 contacts_card">
    <div class="card-header">
+    <form id="formSearchByEmail" method="post">
     <div class="input-group">
-     <input type="text" placeholder="Search..." name="" class="form-control search">
+      
+     <input type="text" placeholder="Email" name="emailSearch" class="form-control search" id="email-search">
      <div class="input-group-prepend">
-      <span class="input-group-text search_btn"><i class="fas fa-search"></i></span>
+      <span class="input-group-text search_btn" onclick="searchByEmail();"><i class="fas fa-search"></i></span>
      </div>
+    
     </div>
+    </form>
    </div>
 
    <div class="card-body contacts_body1">
@@ -283,7 +295,11 @@
 
 <script src="/socket.io/socket.io.js"></script>
 <script>
+  
  $(document).ready(function () {
+
+  
+
   $('#main-content-chat').hide();
   
 
@@ -307,7 +323,15 @@
  
 <script>
   const socket = io();
+  let message = '<%- message %>'
+    console.log(message);
+
+    if (message !== undefined && message !== '') {
+      
+    }
+
   let user = '<%- JSON.stringify(user) %>'
+  console.log(user);
   let usersResponse = [];
 
   let listMyMessage = [];
@@ -318,6 +342,26 @@
   socket.on('listUserOnline', data => {
     console.log(data.users);
     usersResponse = data.users;
+
+
+    let listFriend = JSON.parse(user).friends;
+
+    console.log(listFriend);
+
+    let usersIsFriendOnline = [];
+    for (let i = 0; i < listFriend.length; i++) {
+      console.log('idFriend of current: ' + listFriend[i].idFriend);
+      for (let j = 0; j < usersResponse.length; j++) {
+        console.log('id user online: ' + usersResponse[j].id);
+        if (listFriend[i].idFriend === usersResponse[j].id) {
+          usersIsFriendOnline.push(usersResponse[j]);
+        }
+      }
+    }
+
+    console.log(usersIsFriendOnline);
+    usersResponse = usersIsFriendOnline;
+    console.log(usersResponse);
 
     let userReject = undefined;
     for (let i = 0; i < usersResponse.length; i++) {
@@ -339,7 +383,7 @@
         
       <div class="d-flex bd-highlight">
        <div class="img_cont">
-        <img src="${element.picture}" class="rounded-circle user_img">
+        <img src="${element.avatar}" class="rounded-circle user_img">
         <span class="online_icon"></span>
        </div>
        <div class="user_info">
@@ -378,11 +422,11 @@
 
         $('#main-content-chat').show();
         socket.emit('chooseUser', { userCurrent: userCurrent, userClick: userClick });
-        var img = `<img style="width: 45px; height: 45px;" src="${userClick.picture}" class="rounded-circle user_img">
+        var img = `<img style="width: 45px; height: 45px;" src="${userClick.avatar}" class="rounded-circle user_img">
         <span style="position: absolute;height: 12px;width: 12px;background-color: #4cd137;border-radius: 50%;bottom: 25px;right: 12px;border: 1.5px solid white;" class="online_icon"></span>`; 
         document.getElementById('img_cont_open').innerHTML = img;
 
-        // var imgChat = `<img style="width: 45px; height: 45px;" src="${userClick.picture}" class="rounded-circle user_img">`
+        // var imgChat = `<img style="width: 45px; height: 45px;" src="${userClick.avatar}" class="rounded-circle user_img">`
         // document.getElementById('img_cont_msg').innerHTML = imgChat;
 
         var username = `<span style="color: #fff;">${userClick.username}</span>`
@@ -413,7 +457,7 @@
             
   //         line += `<div class="d-flex justify-content-start mb-4">
   //    <div class="img_cont_msg" id="img_cont_msg">
-  //     <img src="${element.picture}" class="rounded-circle user_img_msg">
+  //     <img src="${element.avatar}" class="rounded-circle user_img_msg">
   //    </div>
   //    <div class="msg_cotainer">
   //     <p style="margin-bottom: 0px;">${element.message}</p>
@@ -468,7 +512,7 @@
           line += `
           <div class="d-flex justify-content-start mb-4">
      <div class="img_cont_msg" id="img_cont_msg">
-      <img src="${element.picture}" class="rounded-circle user_img_msg">
+      <img src="${element.avatar}" class="rounded-circle user_img_msg">
      </div>
      <div class="msg_cotainer">
       <p style="margin-bottom: 0px;min-width: 65px;margin-left: 10px;text-align: left;">${element.message}</p>
@@ -490,21 +534,22 @@ objDiv.scrollTop = objDiv.scrollHeight;
         var date = new Date(date);
         var hours = date.getHours();
         var minutes = date.getMinutes();
-        var ampm = hours >= 12 ? 'pm' : 'am';
-        hours = hours % 12;
-        hours = hours ? hours : 12; // the hour '0' should be '12'
-        minutes = minutes < 10 ? '0' + minutes : minutes;
-        var day = new Date().getDate() - date.getDate();
-        var dayStr = '';
-        if (day < 1) {
-          dayStr = 'Today';
-        } else if (dayStr === 1) {
-          dayStr = 'Yesterday';
-        } else {
-          dayStr = 'Many time ago';
-        }
-        var strTime = hours + ':' + minutes + ' ' + ampm + ' ' + dayStr;
+       
+        
+        var day = date.getDate();
+        var month = date.getMonth() + 1;
+        var year = date.getFullYear();
+        var strTime = hours + ':' + minutes + ' ' + day + '/' + month + '/' + year;
         return strTime;
+      }
+      
+      function searchByEmail() {
+        var email = $('#email-search').val();
+        var action = "/searchByEmail";
+          
+
+        document.forms[0].action = action;
+        $("#formSearchByEmail").submit();
       }
 </script>
         

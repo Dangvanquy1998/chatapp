@@ -1141,6 +1141,98 @@
  
 
  <div id="fb-root"></div>
+
+ <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.2.1/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-messaging.js"></script>
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyDTtXVVsHUsJnKiqSeRyeEPcUIVTk0-sKI",
+    authDomain: "web-notification-4287d.firebaseapp.com",
+    databaseURL: "https://web-notification-4287d.firebaseio.com",
+    projectId: "web-notification-4287d",
+    storageBucket: "web-notification-4287d.appspot.com",
+    messagingSenderId: "994992429937",
+    appId: "1:994992429937:web:5b49407ec4a7e1c53f74d0"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+
+  // Retrieve Firebase Messaging object.
+    const messaging = firebase.messaging();
+
+    // Add the public key generated from the console here.
+      messaging.getToken({ vapidKey: "BOtYBeqc5IBwSuLWWtSvJ7mLWPaytm_dsod-M-KZHjI1pZQ_eSKtAnlammweyP_lTY0ZLcHs2wKAkcIPY4016kQ" });
+
+      messaging.requestPermission().then(function() {
+        messaging.getToken().then((currentToken) => {
+          if (currentToken) {
+            console.log(currentToken);
+            sendTokenToServer(currentToken);
+            // updateUIForPushEnabled(currentToken);
+          } else {
+            // Show permission request.
+            console.log('No registration token available. Request permission to generate one.');
+            // // Show permission UI.
+            // updateUIForPushPermissionRequired();
+            // setTokenSentToServer(false);
+          }
+        }).catch((err) => {
+          console.log('An error occurred while retrieving token. ', err);
+          // showToken('Error retrieving registration token. ', err);
+          // setTokenSentToServer(false);
+        });
+
+        // Handle incoming messages. Called when:
+        // - a message is received while the app has focus
+        // - the user clicks on an app notification created by a service worker
+        //   `messaging.setBackgroundMessageHandler` handler.
+
+        messaging.onTokenRefresh(function () {
+          messaging.getToken().then(function (refreshedToken) {
+            sendTokenToServer(refreshedToken);
+          }).catch(function (err) {
+          });
+        });
+        messaging.onMessage(function (payload) {
+
+          console.log('call')
+
+          var obj = JSON.parse(payload.data.notification);
+          const notificationTitle = obj.title;
+          const notificationOptions = {
+            body: obj.body,
+            icon: '/Content/Img/logo-amezze-120.png'
+          };
+
+        });
+      })
+      // Get registration token. Initially this makes a network call, once retrieved
+        // subsequent calls to getToken will return from cache.
+
+        function sendTokenToServer(token) {
+          $.ajax({
+            url: '/updateToken',
+            method: 'POST',
+            data: {
+              token: token
+            },
+            cache: false,
+            success: function (data) {
+              console.log(data);
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+              alert('error ' + textStatus + " " + errorThrown);
+            }
+          });
+        }
+        
+</script>
 <script src="/socket.io/socket.io.js"></script>
 <script>
   const socket = io();

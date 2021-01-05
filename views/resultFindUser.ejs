@@ -387,16 +387,19 @@
  </script>
 
  <div id="fb-root"></div>
-
+<script src="/socket.io/socket.io.js"></script>
  <script>
+   const socket = io();
   $('#showNotFound').hide();
   $('#showTableResult').hide();
             let accountResult = '<%- JSON.stringify(accountResult) %>'
             let isFriend = '<%- JSON.stringify(isFriend) %>'
 
+            
             console.log(isFriend);
             
             let user = '<%- JSON.stringify(user) %>'
+            socket.emit('login', { users: user });
             let userObj = JSON.parse(user);
 
             let accounts = [];

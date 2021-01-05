@@ -165,6 +165,8 @@ let listMessage = [];
 app.get('/chat', checkAuthenticated, (req, res) => {
     user = req.user;
 
+    let messageAddFriend = req.query.messageAddFriend;
+    console.log('messageAddFriend' + messageAddFriend);
     Account.findOne({googlePlusId: user.id}).exec((err, account) => {
         res.render('chat', {users: JSON.stringify(users), user: account, message: messageAddFriend});
     })
@@ -200,9 +202,43 @@ app.post('/searchByEmail', checkAuthenticated, (req, res) => {
         if (account) {
             accountResult = [];        
             accountResult = account;
-            console.log('co tim thay');
+            console.log('co tim thay' + accountResult);
             
+Account.findOne({googlePlusId: user.id}).exec(function(err, account) {
+        if (account) {
+            listFriend = account.friends;
+            
+            console.log('list friends : ' + listFriend);
 
+            let count = 0;
+            if (listFriend.length > 0) {
+                console.log(listFriend.length)
+                for(let i= 0;i<listFriend.length;i++){
+                    console.log(listFriend[i].idFriend === accountResult.googlePlusId);
+                if(listFriend[i].idFriend === accountResult.googlePlusId){
+                    isFriend = true;
+                    console.log('da la ban');
+                    count++;
+                    
+                }
+                }
+            } else {
+                isFriend = false;
+                console.log('chua la ban');
+            }
+
+            if (count > 0) {
+                isFriend = true;
+            } else {
+                isFriend = false;
+            }
+
+            console.log(isFriend);
+            res.redirect('/resultFindUser');
+        }
+
+        
+    })
         } else {
             accountResult = [];
         }
@@ -210,27 +246,7 @@ app.post('/searchByEmail', checkAuthenticated, (req, res) => {
     })
 
 
-    Account.findOne({googlePlusId: user.id}).exec(function(err, account) {
-        if (account) {
-            listFriend = account.friends;
-            
-            console.log('list friends : ' + listFriend);
-
-            if (listFriend.length > 0) {
-                for(let i= 0;i<listFriend.length;i++){
-                if(listFriend[i].idFriend === accountResult.googlePlusId){
-                    isFriend = true;
-                    break; 
-                }   
-                }
-            } else {
-                isFriend = false;
-            }
-            
-        }
-
-        res.redirect('/resultFindUser');
-    })
+    
 
     
 })
@@ -242,8 +258,7 @@ app.get('/resultFindUser', checkAuthenticated, (req, res) => {
     res.render('resultFindUser', {users: JSON.stringify(users), accountResult: accountResult, isFriend : isFriend});
 })
 
-let messageAddFriend = '';
-app.post('/addFriend', (req, res) => {
+app.post('/addFriend',checkAuthenticated, (req, res) => {
     var idFriend = req.body.idFriend;
     var idOwner = req.body.idOwner;
     
@@ -264,6 +279,7 @@ app.post('/addFriend', (req, res) => {
         
     })
 
+    let messageAddFriend = '';
     Account.findOne({googlePlusId: idFriend}).exec(function(err, accountFriend) {
         if (accountFriend) {
             
@@ -272,11 +288,23 @@ app.post('/addFriend', (req, res) => {
 
             Account.findOneAndUpdate({googlePlusId: idFriend}, {$set:{friends: listFriend}}).exec(function(err, accountFriend) {
             messageAddFriend = 'Thêm bạn thành công';
+
+            user = req.user;
+
+        
+        console.log('messageAddFriend' + messageAddFriend);
+        Account.findOne({googlePlusId: user.id}).exec((err, account) => {
+            res.redirect('/chat?messageAddFriend='+messageAddFriend);
+        })
             });
         } else {
             
         }
-        res.redirect('/chat');
+
+        
+        
+        
+        
     })
 
     
@@ -421,6 +449,20 @@ io.on('connection', socket => {
   io.emit('listUserOnline', {users});
   
  })
+})
+
+app.post('/updateToken', checkAuthenticated, (req, res) => {
+    let user = req.user;
+    let token = req.body.token;
+
+    Account.findOne({googlePlusId: user.id}).exec(function(err, account) {
+        if (account) {
+            Account.findOneAndUpdate({googlePlusId: user.id}, {$set:{deviceId: token}}).exec(function(err, accountResult) {
+                
+            });
+        }
+    })
+    console.log(req.body)
 })
 
 server.listen(PORT, () => console.log(`Server running on port ${PORT}`));

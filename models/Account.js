@@ -12,6 +12,7 @@ const AccountSchema = new Schema({
  loginType: String,
  googlePlusId: String,
  facebookId: String,
+ deviceId: String,
  friends: [
   {
    idFriend: String
